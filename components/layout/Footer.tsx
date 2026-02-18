@@ -27,6 +27,8 @@ export default function Footer() {
             getInTouch: 'Get in Touch',
             address: 'Oddanchatram, Tamil Nadu, India',
             rights: 'All rights reserved.',
+            privacy: 'Privacy Policy',
+            terms: 'Terms of Service',
         },
         ta: {
             brand: 'லூர்து கார்டன்',
@@ -41,6 +43,8 @@ export default function Footer() {
             getInTouch: 'தொடர்பு கொள்ள',
             address: 'ஒட்டன்சத்திரம், தமிழ்நாடு, இந்தியா',
             rights: 'அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.',
+            privacy: 'தனியுரிமைக் கொள்கை',
+            terms: 'சேவை விதிமுறைகள்',
         }
     }
 
@@ -106,8 +110,8 @@ export default function Footer() {
                 <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
                     <p>© {new Date().getFullYear()} {content.brand}. {content.rights}</p>
                     <div className="flex gap-8">
-                        <Link href="/contact" className="hover:text-white transition">Privacy Policy</Link>
-                        <Link href="/contact" className="hover:text-white transition">Terms of Service</Link>
+                        <Link href="/privacy" className="hover:text-white transition">{content.privacy}</Link>
+                        <Link href="/terms" className="hover:text-white transition">{content.terms}</Link>
                     </div>
                 </div>
             </div>
