@@ -1,0 +1,155 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - link "Lourdes Garden Premium Organic Products" [ref=e7] [cursor=pointer]:
+            - /url: /
+            - img [ref=e8]
+            - generic [ref=e11]:
+              - heading "Lourdes Garden" [level=1] [ref=e12]
+              - paragraph [ref=e13]: Premium Organic Products
+          - navigation [ref=e14]:
+            - link "Our Story" [ref=e15] [cursor=pointer]:
+              - /url: /about
+            - link "Products" [ref=e16] [cursor=pointer]:
+              - /url: /products
+            - link "Gallery" [ref=e17] [cursor=pointer]:
+              - /url: /gallery
+            - link "Contact" [ref=e18] [cursor=pointer]:
+              - /url: /contact
+        - generic [ref=e19]:
+          - button "Toggle language" [ref=e20]:
+            - img [ref=e21]
+            - generic [ref=e25]: ENGLISH
+          - button "Toggle theme" [ref=e26]:
+            - img [ref=e27]
+    - generic [ref=e36]:
+      - heading "✉️ Contact Us" [level=1] [ref=e37]
+      - paragraph [ref=e38]: We'd love to hear from you. Get in touch with our team.
+    - generic [ref=e40]:
+      - generic [ref=e41]:
+        - generic [ref=e43]:
+          - img [ref=e45]
+          - generic [ref=e48]:
+            - heading "Visit Our Farm" [level=3] [ref=e49]
+            - paragraph [ref=e50]: SIRUVATU, Oddanchatram, Vadakadu, Tamil Nadu 624212, India
+        - generic [ref=e52]:
+          - img [ref=e54]
+          - generic [ref=e57]:
+            - heading "Email Us" [level=3] [ref=e58]
+            - link "lourdesgarden.odc@gmail.com" [ref=e59] [cursor=pointer]:
+              - /url: mailto:lourdesgarden.odc@gmail.com
+        - generic [ref=e61]:
+          - img [ref=e63]
+          - generic [ref=e65]:
+            - heading "Call Us" [level=3] [ref=e66]
+            - link "+91 73733 48242" [ref=e67] [cursor=pointer]:
+              - /url: tel:+917373348242
+        - generic [ref=e69]:
+          - img [ref=e71]
+          - generic [ref=e74]:
+            - heading "Business Hours" [level=3] [ref=e75]
+            - paragraph [ref=e76]: "Mon - Sat: 8:00 AM - 6:00 PM"
+      - generic [ref=e78]:
+        - heading "Send us a Message" [level=2] [ref=e79]
+        - generic [ref=e80]:
+          - generic [ref=e81]:
+            - generic [ref=e82]:
+              - generic [ref=e83]: Full Name *
+              - textbox "Enter your name" [ref=e84]: Automation Tester
+            - generic [ref=e85]:
+              - generic [ref=e86]: Email Address *
+              - textbox "your@email.com" [active] [ref=e87]: test@example.com
+            - generic [ref=e88]:
+              - generic [ref=e89]: Phone Number
+              - textbox "+91 XXXXX XXXXX" [ref=e90]
+            - generic [ref=e91]:
+              - generic [ref=e92]: Subject *
+              - combobox [ref=e93]:
+                - option "General Inquiry" [selected]
+                - option "Product Inquiry"
+                - option "Wholesale / B2B"
+                - option "Export Inquiry"
+                - option "Feedback"
+                - option "Other"
+          - generic [ref=e94]:
+            - generic [ref=e95]: Your Message *
+            - textbox "Tell us how we can help you..." [ref=e96]
+          - button "Send Message" [ref=e97]:
+            - img [ref=e98]
+            - text: Send Message
+    - generic [ref=e102]:
+      - heading "Find Us on the Map" [level=2] [ref=e103]
+      - iframe [ref=e105]:
+        
+      - link "Open in Google Maps" [ref=e107] [cursor=pointer]:
+        - /url: https://maps.app.goo.gl/Nguc15jjMuFTA5ALA
+        - img [ref=e108]
+        - text: Open in Google Maps
+    - contentinfo [ref=e111]:
+      - generic [ref=e112]:
+        - generic [ref=e113]:
+          - generic [ref=e114]:
+            - generic [ref=e115]:
+              - img [ref=e116]
+              - generic [ref=e119]: Lourdes Garden
+            - paragraph [ref=e120]: Premium organic agricultural products from the mountains of Tamil Nadu. Dedicated to sustainable farming and global excellence.
+            - generic [ref=e121]:
+              - link [ref=e122] [cursor=pointer]:
+                - /url: https://wa.me/917373348242
+                - img [ref=e123]
+              - link [ref=e125] [cursor=pointer]:
+                - /url: mailto:lourdesgarden.odc@gmail.com
+                - img [ref=e126]
+          - generic [ref=e129]:
+            - heading "Quick Links" [level=4] [ref=e130]
+            - list [ref=e131]:
+              - listitem [ref=e132]:
+                - link "Home" [ref=e133] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=e134]:
+                - link "Our Story" [ref=e135] [cursor=pointer]:
+                  - /url: /about
+              - listitem [ref=e136]:
+                - link "Products" [ref=e137] [cursor=pointer]:
+                  - /url: /products
+              - listitem [ref=e138]:
+                - link "Gallery" [ref=e139] [cursor=pointer]:
+                  - /url: /gallery
+              - listitem [ref=e140]:
+                - link "Contact" [ref=e141] [cursor=pointer]:
+                  - /url: /contact
+          - generic [ref=e142]:
+            - heading "Get in Touch" [level=4] [ref=e143]
+            - list [ref=e144]:
+              - listitem [ref=e145]:
+                - img [ref=e146]
+                - generic [ref=e149]: Oddanchatram, Tamil Nadu, India
+              - listitem [ref=e150]:
+                - img [ref=e151]
+                - link "lourdesgarden.odc@gmail.com" [ref=e154] [cursor=pointer]:
+                  - /url: mailto:lourdesgarden.odc@gmail.com
+              - listitem [ref=e155]:
+                - img [ref=e156]
+                - link "+91 73733 48242" [ref=e158] [cursor=pointer]:
+                  - /url: tel:+917373348242
+        - generic [ref=e159]:
+          - paragraph [ref=e160]: © 2026 Lourdes Garden. All rights reserved.
+          - generic [ref=e161]:
+            - link "Privacy Policy" [ref=e162] [cursor=pointer]:
+              - /url: /contact
+            - link "Terms of Service" [ref=e163] [cursor=pointer]:
+              - /url: /contact
+  - generic [ref=e164]:
+    - generic [ref=e165]:
+      - button [ref=e166]:
+        - img [ref=e167]
+      - paragraph [ref=e170]: Need help? Chat with us on WhatsApp! 💬
+    - button "Chat on WhatsApp" [ref=e172]:
+      - img [ref=e174]
+  - alert [ref=e176]
+```

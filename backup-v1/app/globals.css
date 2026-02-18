@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #111827;
+  --card: #ffffff;
+  --card-foreground: #111827;
+  --popover: #ffffff;
+  --popover-foreground: #111827;
+  --primary: #16a34a;
+  --primary-foreground: #ffffff;
+  --secondary: #f3f4f6;
+  --secondary-foreground: #111827;
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
+  --accent: #f3f4f6;
+  --accent-foreground: #111827;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #16a34a;
+}
+
+.dark {
+  --background: #030712;
+  --foreground: #f9fafb;
+  --card: #030712;
+  --card-foreground: #f9fafb;
+  --popover: #030712;
+  --popover-foreground: #f9fafb;
+  --primary: #22c55e;
+  --primary-foreground: #030712;
+  --secondary: #111827;
+  --secondary-foreground: #f9fafb;
+  --muted: #111827;
+  --muted-foreground: #9ca3af;
+  --accent: #111827;
+  --accent-foreground: #f9fafb;
+  --border: #1f2937;
+  --input: #1f2937;
+  --ring: #22c55e;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition-property: background-color, color;
+  transition-duration: 300ms;
+}
+
+/* Optional: Smooth transitions for all theme-affected elements */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}

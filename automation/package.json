@@ -1,0 +1,29 @@
+{
+    "name": "lourdes-garden-automation",
+    "version": "1.0.0",
+    "description": "E2E Test Automation for Lourdes Garden Enterprise Platform",
+    "scripts": {
+        "test": "playwright test",
+        "test:headed": "playwright test --headed",
+        "test:ui": "playwright test --ui",
+        "test:debug": "playwright test --debug",
+        "test:chrome": "playwright test --project=chromium",
+        "test:firefox": "playwright test --project=firefox",
+        "test:safari": "playwright test --project=webkit",
+        "test:mobile": "playwright test --project=mobile",
+        "report": "playwright show-report",
+        "codegen": "playwright codegen http://localhost:3000"
+    },
+    "keywords": [
+        "playwright",
+        "e2e",
+        "testing",
+        "automation"
+    ],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@playwright/test": "^1.41.0",
+        "@types/node": "^20.11.0"
+    }
+}

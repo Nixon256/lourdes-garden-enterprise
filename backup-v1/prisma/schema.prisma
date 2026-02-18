@@ -1,0 +1,513 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String     @id @default(cuid())
+  email         String     @unique
+  emailVerified DateTime?
+  password      String?
+  name          String
+  phone         String?    @unique
+  phoneVerified Boolean    @default(false)
+  role          UserRole   @default(CUSTOMER)
+  status        UserStatus @default(PENDING_VERIFICATION)
+  image         String?
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+  lastLoginAt   DateTime?
+  accounts      Account[]
+  addresses     Address[]
+  admin         Admin?
+  cart          Cart?
+  customer      Customer?
+  orders        Order[]
+  rfqs          RFQ[]
+  reviews       Review[]
+  sessions      Session[]
+
+  @@index([email])
+  @@index([role])
+  @@index([status])
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Customer {
+  id                String   @id @default(cuid())
+  userId            String   @unique
+  loyaltyPoints     Int      @default(0)
+  totalSpent        Decimal  @default(0) @db.Decimal(10, 2)
+  totalOrders       Int      @default(0)
+  preferredLanguage String   @default("en")
+  preferredCurrency String   @default("INR")
+  newsletter        Boolean  @default(false)
+  smsNotifications  Boolean  @default(true)
+  referralCode      String   @unique
+  referredBy        String?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([referralCode])
+}
+
+model Admin {
+  id          String   @id @default(cuid())
+  userId      String   @unique
+  department  String?
+  permissions Json?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Category {
+  id          String    @id @default(cuid())
+  name        String    @unique
+  slug        String    @unique
+  description String?
+  image       String?
+  nameEn      String
+  nameTa      String?
+  nameHi      String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  products    Product[]
+
+  @@index([slug])
+}
+
+model Product {
+  id              String           @id @default(cuid())
+  sku             String           @unique
+  name            String
+  slug            String           @unique
+  type            ProductType
+  categoryId      String
+  descriptionEn   String
+  descriptionTa   String?
+  descriptionHi   String?
+  shortDescEn     String?
+  shortDescTa     String?
+  shortDescHi     String?
+  basePrice       Decimal          @db.Decimal(10, 2)
+  retailPrice     Decimal          @db.Decimal(10, 2)
+  wholesalePrice  Decimal?         @db.Decimal(10, 2)
+  exportPrice     Decimal?         @db.Decimal(10, 2)
+  currency        String           @default("INR")
+  isOrganic       Boolean          @default(false)
+  isExportGrade   Boolean          @default(false)
+  certifications  Json?
+  weight          Decimal?         @db.Decimal(10, 3)
+  unit            String           @default("kg")
+  nutritionalInfo Json?
+  storageInfo     String?
+  usageInfo       String?
+  primaryImage    String?
+  video           String?
+  has360View      Boolean          @default(false)
+  metaTitle       String?
+  metaDescription String?
+  keywords        String[]
+  status          ProductStatus    @default(DRAFT)
+  isFeatured      Boolean          @default(false)
+  isNewArrival    Boolean          @default(false)
+  isBestSeller    Boolean          @default(false)
+  hasVariants     Boolean          @default(false)
+  totalSold       Int              @default(0)
+  totalRevenue    Decimal          @default(0) @db.Decimal(12, 2)
+  averageRating   Decimal          @default(0) @db.Decimal(3, 2)
+  reviewCount     Int              @default(0)
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  cartItems       CartItem[]
+  inventory       Inventory[]
+  orderItems      OrderItem[]
+  category        Category         @relation(fields: [categoryId], references: [id])
+  images          ProductImage[]
+  variants        ProductVariant[]
+  reviews         Review[]
+
+  @@index([slug])
+  @@index([categoryId])
+  @@index([status])
+  @@index([type])
+}
+
+model ProductVariant {
+  id             String   @id @default(cuid())
+  productId      String
+  sku            String   @unique
+  name           String
+  retailPrice    Decimal  @db.Decimal(10, 2)
+  wholesalePrice Decimal? @db.Decimal(10, 2)
+  exportPrice    Decimal? @db.Decimal(10, 2)
+  weight         Decimal  @db.Decimal(10, 3)
+  unit           String   @default("kg")
+  stock          Int      @default(0)
+  lowStockAlert  Int      @default(10)
+  isActive       Boolean  @default(true)
+  isDefault      Boolean  @default(false)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  product        Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@index([productId])
+  @@index([sku])
+}
+
+model ProductImage {
+  id        String   @id @default(cuid())
+  productId String
+  url       String
+  altText   String?
+  caption   String?
+  order     Int      @default(0)
+  isPrimary Boolean  @default(false)
+  createdAt DateTime @default(now())
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@index([productId])
+}
+
+model Inventory {
+  id              String    @id @default(cuid())
+  productId       String
+  currentStock    Int       @default(0)
+  reservedStock   Int       @default(0)
+  availableStock  Int       @default(0)
+  lowStockAlert   Int       @default(20)
+  reorderPoint    Int       @default(50)
+  batchNumber     String?
+  expiryDate      DateTime?
+  manufactureDate DateTime?
+  warehouse       String    @default("Main Warehouse")
+  location        String?
+  lastRestocked   DateTime?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  product         Product   @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@index([productId])
+}
+
+model Cart {
+  id        String     @id @default(cuid())
+  userId    String?    @unique
+  sessionId String?    @unique
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  user      User?      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  items     CartItem[]
+
+  @@index([userId])
+  @@index([sessionId])
+}
+
+model CartItem {
+  id        String   @id @default(cuid())
+  cartId    String
+  productId String
+  variantId String?
+  quantity  Int      @default(1)
+  price     Decimal  @db.Decimal(10, 2)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  cart      Cart     @relation(fields: [cartId], references: [id], onDelete: Cascade)
+  product   Product  @relation(fields: [productId], references: [id])
+
+  @@index([cartId])
+  @@index([productId])
+}
+
+model Order {
+  id                String        @id @default(cuid())
+  orderNumber       String        @unique
+  userId            String
+  type              OrderType     @default(RETAIL)
+  status            OrderStatus   @default(PENDING)
+  paymentStatus     PaymentStatus @default(PENDING)
+  paymentMethod     PaymentMethod
+  subtotal          Decimal       @db.Decimal(10, 2)
+  shippingCost      Decimal       @default(0) @db.Decimal(10, 2)
+  taxAmount         Decimal       @default(0) @db.Decimal(10, 2)
+  discountAmount    Decimal       @default(0) @db.Decimal(10, 2)
+  total             Decimal       @db.Decimal(10, 2)
+  currency          String        @default("INR")
+  couponCode        String?
+  shippingAddressId String
+  billingAddressId  String
+  trackingNumber    String?
+  carrier           String?
+  estimatedDelivery DateTime?
+  actualDelivery    DateTime?
+  customerNotes     String?
+  adminNotes        String?
+  paidAt            DateTime?
+  shippedAt         DateTime?
+  deliveredAt       DateTime?
+  cancelledAt       DateTime?
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+  documents         Document[]
+  billingAddress    Address       @relation("BillingAddress", fields: [billingAddressId], references: [id])
+  shippingAddress   Address       @relation("ShippingAddress", fields: [shippingAddressId], references: [id])
+  user              User          @relation(fields: [userId], references: [id])
+  items             OrderItem[]
+
+  @@index([userId])
+  @@index([orderNumber])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model OrderItem {
+  id        String   @id @default(cuid())
+  orderId   String
+  productId String
+  sku       String
+  name      String
+  variant   String?
+  quantity  Int
+  price     Decimal  @db.Decimal(10, 2)
+  total     Decimal  @db.Decimal(10, 2)
+  createdAt DateTime @default(now())
+  order     Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product   Product  @relation(fields: [productId], references: [id])
+
+  @@index([orderId])
+  @@index([productId])
+}
+
+model Address {
+  id             String      @id @default(cuid())
+  userId         String
+  type           AddressType @default(BOTH)
+  fullName       String
+  phone          String
+  email          String?
+  addressLine1   String
+  addressLine2   String?
+  city           String
+  state          String
+  postalCode     String
+  country        String      @default("India")
+  isDefault      Boolean     @default(false)
+  company        String?
+  taxId          String?
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+  user           User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  ordersBilling  Order[]     @relation("BillingAddress")
+  ordersShipping Order[]     @relation("ShippingAddress")
+
+  @@index([userId])
+}
+
+model RFQ {
+  id               String     @id @default(cuid())
+  rfqNumber        String     @unique
+  userId           String
+  status           RFQStatus  @default(PENDING)
+  productName      String
+  productCategory  String
+  quantity         Decimal    @db.Decimal(10, 3)
+  unit             String     @default("kg")
+  targetPrice      Decimal?   @db.Decimal(10, 2)
+  quotedPrice      Decimal?   @db.Decimal(10, 2)
+  finalPrice       Decimal?   @db.Decimal(10, 2)
+  currency         String     @default("USD")
+  deliveryDate     DateTime?
+  incoterms        String?
+  destination      String?
+  specifications   String?
+  certifications   String[]
+  paymentTerms     String?
+  customerMessage  String?
+  adminResponse    String?
+  convertedToOrder String?    @unique
+  createdAt        DateTime   @default(now())
+  updatedAt        DateTime   @updatedAt
+  reviewedAt       DateTime?
+  quotedAt         DateTime?
+  documents        Document[]
+  user             User       @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([rfqNumber])
+  @@index([status])
+}
+
+model Document {
+  id          String       @id @default(cuid())
+  type        DocumentType
+  name        String
+  description String?
+  fileUrl     String
+  fileSize    Int?
+  mimeType    String?
+  orderId     String?
+  rfqId       String?
+  uploadedBy  String?
+  isPublic    Boolean      @default(false)
+  createdAt   DateTime     @default(now())
+  order       Order?       @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  rfq         RFQ?         @relation(fields: [rfqId], references: [id], onDelete: Cascade)
+
+  @@index([orderId])
+  @@index([rfqId])
+  @@index([type])
+}
+
+model Review {
+  id                 String    @id @default(cuid())
+  productId          String
+  userId             String
+  rating             Int
+  title              String?
+  comment            String?
+  images             String[]
+  isVerifiedPurchase Boolean   @default(false)
+  adminResponse      String?
+  respondedAt        DateTime?
+  isApproved         Boolean   @default(false)
+  isHidden           Boolean   @default(false)
+  helpfulCount       Int       @default(0)
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+  product            Product   @relation(fields: [productId], references: [id], onDelete: Cascade)
+  user               User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([productId])
+  @@index([userId])
+  @@index([rating])
+}
+
+enum UserRole {
+  CUSTOMER
+  WHOLESALER
+  DISTRIBUTOR
+  ADMIN
+  SUPER_ADMIN
+}
+
+enum UserStatus {
+  ACTIVE
+  INACTIVE
+  SUSPENDED
+  PENDING_VERIFICATION
+}
+
+enum ProductStatus {
+  DRAFT
+  ACTIVE
+  OUT_OF_STOCK
+  DISCONTINUED
+}
+
+enum ProductType {
+  FRUIT
+  SPICE
+  TREE
+  VALUE_ADDED
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  PROCESSING
+  SHIPPED
+  IN_TRANSIT
+  DELIVERED
+  CANCELLED
+  REFUNDED
+}
+
+enum PaymentStatus {
+  PENDING
+  AUTHORIZED
+  PAID
+  FAILED
+  REFUNDED
+  PARTIALLY_REFUNDED
+}
+
+enum PaymentMethod {
+  CREDIT_CARD
+  RAZORPAY
+  STRIPE
+  PAYPAL
+  COD
+  WIRE_TRANSFER
+}
+
+enum OrderType {
+  RETAIL
+  WHOLESALE
+  EXPORT
+}
+
+enum AddressType {
+  SHIPPING
+  BILLING
+  BOTH
+}
+
+enum RFQStatus {
+  PENDING
+  REVIEWED
+  QUOTED
+  NEGOTIATING
+  ACCEPTED
+  REJECTED
+  CONVERTED
+}
+
+enum DocumentType {
+  INVOICE
+  PACKING_LIST
+  CERTIFICATE_OF_ORIGIN
+  PHYTOSANITARY_CERTIFICATE
+  QUALITY_CERTIFICATE
+  SHIPPING_DOCUMENT
+  QUOTATION
+  OTHER
+}

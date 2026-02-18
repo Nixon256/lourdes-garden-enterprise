@@ -1,0 +1,154 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - link "லூர்து கார்டன் சிறந்த இயற்கை தயாரிப்புகள்" [ref=e7] [cursor=pointer]:
+            - /url: /
+            - img [ref=e8]
+            - generic [ref=e11]:
+              - heading "லூர்து கார்டன்" [level=1] [ref=e12]
+              - paragraph [ref=e13]: சிறந்த இயற்கை தயாரிப்புகள்
+          - navigation [ref=e14]:
+            - link "எங்கள் கதை" [ref=e15] [cursor=pointer]:
+              - /url: /about
+            - link "தயாரிப்புகள்" [ref=e16] [cursor=pointer]:
+              - /url: /products
+            - link "கேலரி" [ref=e17] [cursor=pointer]:
+              - /url: /gallery
+            - link "தொடர்பு" [ref=e18] [cursor=pointer]:
+              - /url: /contact
+        - generic [ref=e19]:
+          - button "Toggle language" [active] [ref=e20]:
+            - img [ref=e21]
+            - generic [ref=e25]: தமிழ்
+          - button "Toggle theme" [ref=e26]:
+            - img [ref=e27]
+    - generic [ref=e33]:
+      - img "Lourdes Garden Farm" [ref=e34]
+      - generic [ref=e36]:
+        - heading "🌿 லூர்து கார்டன்" [level=2] [ref=e37]
+        - paragraph [ref=e38]: எங்கள் பண்ணையிலிருந்து உலகிற்கு
+        - paragraph [ref=e39]: தமிழ்நாட்டின் மூடுபனி மலைகளில் இயற்கையாக வளர்க்கப்படும் உயர்தர ஆர்கானிக் விவசாய பொருட்கள்.
+        - generic [ref=e40]:
+          - link "தயாரிப்புகளைப் பாருங்கள்" [ref=e41] [cursor=pointer]:
+            - /url: /products
+            - text: தயாரிப்புகளைப் பாருங்கள்
+            - img [ref=e42]
+          - link "எங்கள் கதை" [ref=e44] [cursor=pointer]:
+            - /url: /about
+    - generic [ref=e46]:
+      - generic [ref=e47]:
+        - img [ref=e49]
+        - heading "100% இயற்கை (Organic)" [level=3] [ref=e52]
+        - paragraph [ref=e53]: ரசாயன பூச்சிக்கொல்லிகள் அல்லது உரங்கள் இன்றி வளர்க்கப்படுகிறது. எங்கள் மண்ணிலிருந்து நேரடியாக தூய மற்றும் ஆரோக்கியமான தயாரிப்புகள்.
+      - generic [ref=e54]:
+        - img [ref=e56]
+        - heading "ஏற்றுமதி தரம்" [level=3] [ref=e59]
+        - paragraph [ref=e60]: சர்வதேச ஏற்றுமதி சந்தைகளுக்கான தரமான தயாரிப்புகள், உலகளாவிய தரத்தை பூர்த்தி செய்கின்றன.
+      - generic [ref=e61]:
+        - img [ref=e63]
+        - heading "மொத்த விற்பனை (B2B)" [level=3] [ref=e68]
+        - paragraph [ref=e69]: உலகளாவிய வணிகங்களுக்கு போட்டித்தன்மை வாய்ந்த மொத்த விலையில் வழங்கி வருகிறோம்.
+    - generic [ref=e71]:
+      - heading "சிறப்பு அறுவடை" [level=2] [ref=e73]
+      - generic [ref=e75]:
+        - generic [ref=e76]:
+          - img "Black Lemon" [ref=e78]
+          - generic [ref=e79]:
+            - heading "Black Lemon" [level=4] [ref=e80]
+            - paragraph [ref=e81]: ₹449.99/kg
+            - button "Add to Cart" [ref=e83]:
+              - img [ref=e84]
+              - text: Add to Cart
+        - generic [ref=e88]:
+          - img "Premium Avocado" [ref=e90]
+          - generic [ref=e91]:
+            - heading "Premium Avocado" [level=4] [ref=e92]
+            - paragraph [ref=e93]: ₹180/piece
+            - button "Add to Cart" [ref=e95]:
+              - img [ref=e96]
+              - text: Add to Cart
+        - generic [ref=e100]:
+          - img "Fresh Mountain Lemons" [ref=e102]
+          - generic [ref=e103]:
+            - heading "Fresh Mountain Lemons" [level=4] [ref=e104]
+            - paragraph [ref=e105]: ₹70/kg
+            - button "Add to Cart" [ref=e107]:
+              - img [ref=e108]
+              - text: Add to Cart
+        - generic [ref=e112]:
+          - img "Mountain Banana (Nendran)" [ref=e114]
+          - generic [ref=e115]:
+            - heading "Mountain Banana (Nendran)" [level=4] [ref=e116]
+            - paragraph [ref=e117]: ₹45/kg
+            - button "Add to Cart" [ref=e119]:
+              - img [ref=e120]
+              - text: Add to Cart
+        - generic [ref=e124]:
+          - img "Organic Black Pepper" [ref=e126]
+          - generic [ref=e127]:
+            - heading "Organic Black Pepper" [level=4] [ref=e128]
+            - paragraph [ref=e129]: ₹850/kg
+            - button "Add to Cart" [ref=e131]:
+              - img [ref=e132]
+              - text: Add to Cart
+    - contentinfo [ref=e136]:
+      - generic [ref=e137]:
+        - generic [ref=e138]:
+          - generic [ref=e139]:
+            - generic [ref=e140]:
+              - img [ref=e141]
+              - generic [ref=e144]: லூர்து கார்டன்
+            - paragraph [ref=e145]: தமிழ்நாட்டின் மலைப்பகுதிகளில் இருந்து உயர்தர இயற்கை விவசாய பொருட்கள். நிலையான விவசாயம் மற்றும் உலகளாவிய மேன்மைக்கு அர்ப்பணிக்கப்பட்டது.
+            - generic [ref=e146]:
+              - link [ref=e147] [cursor=pointer]:
+                - /url: https://wa.me/917373348242
+                - img [ref=e148]
+              - link [ref=e150] [cursor=pointer]:
+                - /url: mailto:lourdesgarden.odc@gmail.com
+                - img [ref=e151]
+          - generic [ref=e154]:
+            - heading "விரைவு இணைப்புகள்" [level=4] [ref=e155]
+            - list [ref=e156]:
+              - listitem [ref=e157]:
+                - link "முகப்பு" [ref=e158] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=e159]:
+                - link "எங்கள் கதை" [ref=e160] [cursor=pointer]:
+                  - /url: /about
+              - listitem [ref=e161]:
+                - link "தயாரிப்புகள்" [ref=e162] [cursor=pointer]:
+                  - /url: /products
+              - listitem [ref=e163]:
+                - link "கேலரி" [ref=e164] [cursor=pointer]:
+                  - /url: /gallery
+              - listitem [ref=e165]:
+                - link "தொடர்பு" [ref=e166] [cursor=pointer]:
+                  - /url: /contact
+          - generic [ref=e167]:
+            - heading "தொடர்பு கொள்ள" [level=4] [ref=e168]
+            - list [ref=e169]:
+              - listitem [ref=e170]:
+                - img [ref=e171]
+                - generic [ref=e174]: ஒட்டன்சத்திரம், தமிழ்நாடு, இந்தியா
+              - listitem [ref=e175]:
+                - img [ref=e176]
+                - link "lourdesgarden.odc@gmail.com" [ref=e179] [cursor=pointer]:
+                  - /url: mailto:lourdesgarden.odc@gmail.com
+              - listitem [ref=e180]:
+                - img [ref=e181]
+                - link "+91 73733 48242" [ref=e183] [cursor=pointer]:
+                  - /url: tel:+917373348242
+        - generic [ref=e184]:
+          - paragraph [ref=e185]: © 2026 லூர்து கார்டன். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.
+          - generic [ref=e186]:
+            - link "Privacy Policy" [ref=e187] [cursor=pointer]:
+              - /url: /contact
+            - link "Terms of Service" [ref=e188] [cursor=pointer]:
+              - /url: /contact
+  - alert [ref=e189]
+```
