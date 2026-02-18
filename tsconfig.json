@@ -38,6 +38,9 @@
   ],
   "exclude": [
     "node_modules",
-    "backup-v1"
+    "backup-v1",
+    "automation",
+    "Version1.0-Automation",
+    "test-results"
   ]
 }
