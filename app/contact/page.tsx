@@ -52,6 +52,18 @@ export default function ContactPage() {
             hours: 'Business Hours',
             hoursValue: 'Mon - Sat: 8:00 AM - 6:00 PM',
             mapTitle: 'Find Us on the Map',
+            routeTitle: 'Mountain Route Guide',
+            routeSubtitle: 'A scenic 25.8km trek through the mountains of Tamil Nadu.',
+            distance: 'Total Distance',
+            estTime: 'Est. Travel Time',
+            oddBusStand: 'Oddanchatram Bus Stand',
+            oddBusStandDesc: 'The journey towards the hills begins here.',
+            checkPost: 'Forest Check Post',
+            checkPostDesc: 'Mountain entry point. (2.1km from Start)',
+            bethelpuram: 'Bethelpuram (Take Left)',
+            bethelpuramDesc: 'Crucial turn point. (16.7km from Check Post)',
+            destination: 'Lourdes Garden',
+            destinationDesc: 'Welcome to our sanctuary. (7km from Turn)',
         },
         ta: {
             title: 'தொடர்பு கொள்ள',
@@ -79,6 +91,18 @@ export default function ContactPage() {
             hours: 'வணிக நேரம்',
             hoursValue: 'திங்கள் - சனி: காலை 8:00 - மாலை 6:00',
             mapTitle: 'வரைபடத்தில் எங்களைக் காணுங்கள்',
+            routeTitle: 'மலைப் பாதை வழிகாட்டி',
+            routeSubtitle: 'தமிழ்நாட்டின் மலைப்பகுதிகளில் 25.8 கிமீ அழகிய பயணம்.',
+            distance: 'மொத்த தூரம்',
+            estTime: 'மதிப்பிடப்பட்ட நேரம்',
+            oddBusStand: 'ஒட்டன்சத்திரம் பேருந்து நிலையம்',
+            oddBusStandDesc: 'மலைகளை நோக்கிய பயணம் இங்கே தொடங்குகிறது.',
+            checkPost: 'வன சோதனைச் சாவடி',
+            checkPostDesc: 'மலைப்பாதை நுழைவுப் புள்ளி. (தொடங்கிய இடத்திலிருந்து 2.1 கிமீ)',
+            bethelpuram: 'பெத்தேல்புரம் (இடதுபுறம் திரும்பவும்)',
+            bethelpuramDesc: 'முக்கியமான திருப்பம். (சோதனைச் சாவடியிலிருந்து 16.7 கிமீ)',
+            destination: 'லூர்து கார்டன்',
+            destinationDesc: 'எங்கள் சரணாலயத்திற்கு உங்களை வரவேற்கிறோம். (திருப்பத்திலிருந்து 7 கிமீ)',
         }
     }
 
@@ -184,8 +208,8 @@ export default function ContactPage() {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-gray-900 dark:text-white mb-1">{content.callUs}</h3>
-                                    <a href="tel:+917373348242" className="text-sm text-purple-600 dark:text-purple-400 hover:underline">
-                                        +91 73733 48242
+                                    <a href="tel:+919626494555" className="text-sm text-purple-600 dark:text-purple-400 hover:underline">
+                                        +91 96264 94555
                                     </a>
                                 </div>
                             </div>
@@ -328,6 +352,124 @@ export default function ContactPage() {
                                     </form>
                                 </>
                             )}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Route Map Section */}
+            <section className="bg-white dark:bg-black py-20 transition-colors">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-green-500/10 text-green-600 dark:text-green-500 text-sm font-medium tracking-wide border border-green-500/20 mb-6 mx-auto">
+                            {language === 'ta' ? 'அழகிய மலைப் பாதை' : 'Scenic Mountain Route'}
+                        </div>
+                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 italic">
+                            {content.routeTitle}
+                        </h2>
+                        <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+                            {content.routeSubtitle}
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        {/* Route Stats */}
+                        <div className="space-y-12">
+                            <div className="grid grid-cols-2 gap-6">
+                                <div className="p-6 bg-green-50 dark:bg-green-900/10 rounded-2xl border border-green-100 dark:border-green-900/20">
+                                    <p className="text-sm text-green-600 dark:text-green-400 font-medium mb-1">{content.distance}</p>
+                                    <p className="text-3xl font-bold text-gray-900 dark:text-white">~ 25.8 KM</p>
+                                </div>
+                                <div className="p-6 bg-blue-50 dark:bg-blue-900/10 rounded-2xl border border-blue-100 dark:border-blue-900/20">
+                                    <p className="text-sm text-blue-600 dark:text-blue-400 font-medium mb-1">{content.estTime}</p>
+                                    <p className="text-3xl font-bold text-gray-900 dark:text-white">~ 45 MIN</p>
+                                </div>
+                            </div>
+
+                            {/* Journey Timeline */}
+                            <div className="relative space-y-8 pl-8 border-l-2 border-dashed border-green-300 dark:border-green-800">
+                                {/* Step 1: Bus Stand */}
+                                <div className="relative">
+                                    <div className="absolute -left-[41px] top-0 w-5 h-5 bg-green-500 rounded-full border-4 border-white dark:border-black shadow-lg" />
+                                    <h4 className="font-bold text-gray-900 dark:text-white mb-1">{content.oddBusStand}</h4>
+                                    <p className="text-sm text-gray-500 dark:text-gray-400">{content.oddBusStandDesc}</p>
+                                    <p className="text-xs font-bold text-green-600 mt-1 uppercase tracking-tight">Start (0 KM)</p>
+                                    <a href="https://maps.app.goo.gl/MLXzA3h9YZqT1Euj7" target="_blank" rel="noopener noreferrer" className="text-xs text-blue-500 hover:underline inline-flex items-center gap-1 mt-1">
+                                        <MapPin className="w-3 h-3" /> View on Maps
+                                    </a>
+                                </div>
+
+                                {/* Step 2: Forest Check Post */}
+                                <div className="relative">
+                                    <div className="absolute -left-[41px] top-0 w-5 h-5 bg-green-500 rounded-full border-4 border-white dark:border-black shadow-lg" />
+                                    <h4 className="font-bold text-gray-900 dark:text-white mb-1">{content.checkPost}</h4>
+                                    <p className="text-sm text-gray-500 dark:text-gray-400">{content.checkPostDesc}</p>
+                                    <div className="flex items-center gap-2 mt-1">
+                                        <div className="h-px w-8 bg-green-200 dark:bg-green-800" />
+                                        <p className="text-xs font-bold text-green-600">2.1 KM</p>
+                                    </div>
+                                    <a href="https://maps.app.goo.gl/K1BZhTa1GB4W6HmLA" target="_blank" rel="noopener noreferrer" className="text-xs text-blue-500 hover:underline inline-flex items-center gap-1 mt-1">
+                                        <MapPin className="w-3 h-3" /> View Check Post
+                                    </a>
+                                </div>
+
+                                {/* Step 3: Bethelpuram */}
+                                <div className="relative">
+                                    <div className="absolute -left-[41px] top-0 w-5 h-5 bg-amber-500 rounded-full border-4 border-white dark:border-black shadow-lg animate-pulse" />
+                                    <h4 className="font-bold text-amber-600 dark:text-amber-500 mb-1">{content.bethelpuram}</h4>
+                                    <p className="text-sm text-gray-500 dark:text-gray-400">{content.bethelpuramDesc}</p>
+                                    <div className="flex items-center gap-2 mt-1">
+                                        <div className="h-px w-8 bg-green-200 dark:bg-green-800" />
+                                        <p className="text-xs font-bold text-green-600">18.8 KM (+16.7 KM)</p>
+                                    </div>
+                                    <div className="flex gap-4 mt-2">
+                                        <a href="https://maps.app.goo.gl/W88r9fzLDdmYQKJa8" target="_blank" rel="noopener noreferrer" className="text-xs text-blue-500 hover:underline flex items-center gap-1">
+                                            <MapPin className="w-3 h-3" /> Bus Stop
+                                        </a>
+                                        <a href="https://maps.app.goo.gl/6hqSxWpVuJZHjcNNA" target="_blank" rel="noopener noreferrer" className="text-xs text-amber-600 font-bold hover:underline bg-amber-50 dark:bg-amber-900/20 px-2 py-0.5 rounded leading-none flex items-center gap-1">
+                                            Take Left Here
+                                        </a>
+                                    </div>
+                                </div>
+
+                                {/* Step 4: Destination */}
+                                <div className="relative">
+                                    <div className="absolute -left-[41px] top-0 w-5 h-5 bg-green-600 rounded-full border-4 border-white dark:border-black shadow-lg" />
+                                    <div className="p-4 bg-green-600/10 rounded-xl border border-green-600/20">
+                                        <h4 className="font-bold text-green-600 dark:text-green-500 mb-1">{content.destination}</h4>
+                                        <p className="text-sm text-gray-600 dark:text-gray-400">{content.destinationDesc}</p>
+                                        <div className="flex items-center gap-2 mt-1">
+                                            <div className="h-px w-8 bg-green-200 dark:bg-green-800" />
+                                            <p className="text-xs font-bold text-green-600">25.8 KM (ARRIVED)</p>
+                                        </div>
+                                        <a href="https://maps.app.goo.gl/4uF7AXKVr6CR6LPr8" target="_blank" rel="noopener noreferrer" className="text-xs text-blue-500 hover:underline mt-2 inline-block">
+                                            View Final Destination
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Illustrative Map Visual */}
+                        <div className="relative group">
+                            <div className="absolute inset-0 bg-green-500/20 blur-3xl rounded-full opacity-20 group-hover:opacity-40 transition-opacity" />
+                            <div className="relative bg-gray-50 dark:bg-gray-900 rounded-3xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-2xl p-2">
+                                <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-inner">
+                                    <Image
+                                        src="/images/route-map.png"
+                                        alt="Lourdes Garden Route Map"
+                                        fill
+                                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                    />
+                                    {/* Overlay to match premium aesthetic */}
+                                    <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-2xl" />
+                                </div>
+                            </div>
+                            <div className="mt-4 text-center">
+                                <p className="text-sm text-gray-500 italic">
+                                    {language === 'ta' ? '* சிறந்த வழிகாட்டுதலுக்கு இந்த வரைபடத்தைப் பார்க்கவும்' : '* Refer to this map for the best scenic route guidance'}
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
