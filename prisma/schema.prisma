@@ -119,6 +119,7 @@ model Product {
   id               String           @id @default(cuid())
   sku              String           @unique
   name             String
+  nameTa           String?
   slug             String           @unique
   type             ProductType
   categoryId       String

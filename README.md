@@ -193,34 +193,26 @@ Open http://localhost:3000
 
 ## 🔐 Features Roadmap
 
-### ✅ Phase 0: Design (Complete)
-- Design system
-- UI mockups
-- Database schema
+### ✅ Phase 1: Core (Complete)
+- [x] Multi-role Authentication (Admin/User)
+- [x] Advanced Admin Dashboard
+- [x] Dynamic Product Management
 
-### 🚧 Phase 1: Core (In Progress)
-- [ ] NextAuth.js setup
-- [ ] Login/Register pages
-- [ ] Admin dashboard
-- [ ] Product management
+### ✅ Phase 2: E-Commerce (Complete)
+- [x] Premium Shopping Cart
+- [x] Secure Multi-Gateway Checkout (Stripe/Razorpay)
+- [x] Real-time Order Tracking
 
-### 📋 Phase 2: E-Commerce
-- [ ] Shopping cart
-- [ ] Checkout flow
-- [ ] Payment integration
-- [ ] Order management
+### ✅ Phase 3: Global Reach (Complete)
+- [x] Bilingual Support (English/Tamil)
+- [x] Cinematic Mountain Route Guide
+- [x] SEO & Meta Optimization
 
-### 📋 Phase 3: Import/Export
-- [ ] RFQ system
-- [ ] Multi-currency
-- [ ] Document generation
-- [ ] B2B features
-
-### 📋 Phase 4: Advanced
-- [ ] Multi-language
-- [ ] SEO optimization
-- [ ] Mobile PWA
-- [ ] Analytics
+### 🚧 Phase 4: Version 2.0 (Planned)
+- [ ] **Recurring Subscriptions:** Organic box delivery schedules.
+- [ ] **AI Concierge:** GPT-based spice & recipe assistant.
+- [ ] **Mobile PWA:** App-like experience with offline support.
+- [ ] **Loyalty Program:** Points-based VIP rewards system.
 
 ---
 

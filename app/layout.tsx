@@ -6,6 +6,9 @@ import { Toaster } from "react-hot-toast";
 import CartDrawer from "@/components/cart/CartDrawer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import CustomCursor from "@/components/ui/CustomCursor";
+import GoogleAnalyticsProvider from "@/components/analytics/GoogleAnalyticsProvider";
+import MicrosoftClarityProvider from "@/components/analytics/MicrosoftClarityProvider";
+
 
 const arima = Arima({
   subsets: ["latin", "tamil"],
@@ -15,8 +18,8 @@ const arima = Arima({
 });
 
 export const metadata: Metadata = {
-  title: "Lourdes Garden | Premium Global Agricultural Heritage",
-  description: "Experience the pinnacle of organic mountain farming. From our heritage grove in Tamil Nadu to the global stage.",
+  title: "Lourdes Garden | Premium Organic Farm & Global Agriculture Export",
+  description: "Exporting premium organic black pepper, cardamom, and mountain bananas from Tamil Nadu. Certified global agricultural standards for international wholesale.",
   manifest: '/manifest.webmanifest',
   openGraph: {
     title: 'Lourdes Garden | Global Agricultural Excellence',
@@ -26,23 +29,37 @@ export const metadata: Metadata = {
 };
 
 const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'Lourdes Garden',
-  url: 'https://lourdesgarden.com',
-  logo: 'https://lourdesgarden.com/images/hero.png',
-  description: 'Premium organic agricultural export platform from the mountains of Tamil Nadu.',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'SIRUVATU, Oddanchatram, Vadakadu',
-    addressLocality: 'Tamil Nadu',
-    postalCode: '624212',
-    addressCountry: 'IN'
+  "@context": "https://schema.org",
+  "@type": "AgricultureService",
+  "name": "Lourdes Garden",
+  "image": "https://lourdesgarden.com/images/hero.png",
+  "description": "Premium organic agricultural export from Tamil Nadu. Specializing in pepper, cardamom, and mountain bananas.",
+  "url": "https://lourdesgarden.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "SIRUVATU, Oddanchatram, Vadakadu",
+    "addressLocality": "Tamil Nadu",
+    "postalCode": "624212",
+    "addressCountry": "IN"
   },
-  contactPoint: {
-    '@type': 'ContactPoint',
-    telephone: '+919626494555',
-    contactType: 'customer service'
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "10.4764",
+    "longitude": "77.6749"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Export Agriculture Products",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Organic Black Pepper" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Green Cardamom" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Mountain Banana" } }
+    ]
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+919626494555",
+    "contactType": "customer service"
   }
 }
 
@@ -60,6 +77,8 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <GoogleAnalyticsProvider />
+        <MicrosoftClarityProvider />
       </head>
       <body
         className={`${arima.variable} font-sans antialiased transition-colors duration-300`}

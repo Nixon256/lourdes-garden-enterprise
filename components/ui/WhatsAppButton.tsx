@@ -2,13 +2,30 @@
 
 import { useState, useEffect } from 'react'
 import { MessageCircle, X } from 'lucide-react'
+import { trackWhatsAppClick } from '@/lib/analytics'
+import { useLanguageStore } from '@/lib/store/useLanguageStore'
 
 const WHATSAPP_NUMBER = '917373348242'
-const DEFAULT_MESSAGE = 'Hi! I\'m interested in your organic products from Lourdes Garden. Can you help me?'
 
 export default function WhatsAppButton() {
+    const { language } = useLanguageStore()
     const [isVisible, setIsVisible] = useState(false)
     const [showTooltip, setShowTooltip] = useState(false)
+
+    const t = {
+        en: {
+            tooltip: 'Need help? Chat with us on WhatsApp! 💬',
+            message: "Hi! I'm interested in your organic products from Lourdes Garden. Can you help me?",
+            aria: "Chat on WhatsApp"
+        },
+        ta: {
+            tooltip: 'உதவி வேண்டுமா? வாட்ஸ்அப்பில் எங்களைத் தொடர்பு கொள்ளுங்கள்! 💬',
+            message: "வணக்கம்! லூர்து கார்டனின் ஆர்கானிக் தயாரிப்புகளில் எனக்கு ஆர்வம் உள்ளது. எனக்கு உதவ முடியுமா?",
+            aria: "வாட்ஸ்அப்பில் அரட்டையடிக்கவும்"
+        }
+    }
+
+    const content = t[language as keyof typeof t] || t.en
 
     useEffect(() => {
         const timer = setTimeout(() => setIsVisible(true), 2000)
@@ -20,7 +37,8 @@ export default function WhatsAppButton() {
     }, [])
 
     const handleClick = () => {
-        const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(DEFAULT_MESSAGE)}`
+        trackWhatsAppClick('floating_button')
+        const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(content.message)}`
         window.open(url, '_blank')
     }
 
@@ -30,14 +48,18 @@ export default function WhatsAppButton() {
         <div className="fixed bottom-6 right-6 z-50 flex items-end gap-3">
             {/* Tooltip */}
             {showTooltip && (
-                <div className="relative bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-4 py-3 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 max-w-[200px] animate-fade-in">
+                <div
+                    className="relative bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-4 py-3 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 max-w-[200px] animate-fade-in"
+                    data-testid="whatsapp-tooltip"
+                >
                     <button
                         onClick={() => setShowTooltip(false)}
                         className="absolute -top-2 -right-2 w-5 h-5 bg-gray-300 dark:bg-gray-600 rounded-full flex items-center justify-center text-xs hover:bg-gray-400 transition"
+                        data-testid="whatsapp-tooltip-close"
                     >
                         <X className="w-3 h-3" />
                     </button>
-                    <p className="text-sm font-medium">Need help? Chat with us on WhatsApp! 💬</p>
+                    <p className="text-sm font-medium">{content.tooltip}</p>
                     <div className="absolute right-4 -bottom-2 w-4 h-4 bg-white dark:bg-gray-800 border-b border-r border-gray-200 dark:border-gray-700 transform rotate-45" />
                 </div>
             )}
@@ -46,7 +68,8 @@ export default function WhatsAppButton() {
             <button
                 onClick={handleClick}
                 className="group relative w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 animate-bounce-slow"
-                aria-label="Chat on WhatsApp"
+                aria-label={content.aria}
+                data-testid="whatsapp-floating-button"
             >
                 {/* Pulse ring */}
                 <span className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-20" />

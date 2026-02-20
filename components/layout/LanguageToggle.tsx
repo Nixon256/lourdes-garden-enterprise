@@ -23,6 +23,7 @@ export function LanguageToggle() {
             onClick={toggleLanguage}
             className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-green-50 dark:hover:bg-green-900/30 text-gray-700 dark:text-gray-300 transition-all border border-transparent hover:border-green-200 dark:hover:border-green-800"
             aria-label="Toggle language"
+            data-testid="language-toggle-button"
         >
             <Languages className="w-4 h-4 text-green-600 dark:text-green-500" />
             <span className="text-sm font-bold tracking-tight">

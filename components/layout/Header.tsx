@@ -51,7 +51,11 @@ export default function Header() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
                 <div className="flex justify-between items-center">
                     <div className="flex items-center gap-4">
-                        <Link href="/" className="flex items-center gap-2 group">
+                        <Link
+                            href="/"
+                            className="flex items-center gap-2 group"
+                            data-testid="header-brand-link"
+                        >
                             <Leaf className="w-8 h-8 text-green-600 transition-transform group-hover:rotate-12" />
                             <div>
                                 <h1 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white arima-font">{content.title}</h1>
@@ -65,6 +69,7 @@ export default function Header() {
                                     key={link.href}
                                     href={link.href}
                                     className="text-sm text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-500 font-semibold transition-colors"
+                                    data-testid={`header-nav-link-${link.href.replace('/', '')}`}
                                 >
                                     {link.label}
                                 </Link>
@@ -82,6 +87,7 @@ export default function Header() {
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             className="md:hidden p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                            data-testid="header-mobile-menu-button"
                         >
                             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                         </button>
@@ -105,6 +111,7 @@ export default function Header() {
                                     href={link.href}
                                     onClick={() => setIsMenuOpen(false)}
                                     className="block px-3 py-4 text-base font-bold text-gray-700 dark:text-gray-200 hover:text-green-600 dark:hover:text-green-500 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl transition-all"
+                                    data-testid={`header-mobile-nav-link-${link.href.replace('/', '')}`}
                                 >
                                     {link.label}
                                 </Link>

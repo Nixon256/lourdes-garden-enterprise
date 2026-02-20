@@ -99,7 +99,7 @@ export default function ProductsPage() {
             <Header />
 
             {/* Cinematic Hero */}
-            <section className="relative h-screen flex items-center justify-center overflow-hidden">
+            <section className="relative h-screen flex items-center justify-center overflow-hidden" data-testid="products-hero-section">
                 <motion.div
                     initial={{ scale: 1.1 }}
                     animate={{ scale: 1 }}
@@ -151,6 +151,7 @@ export default function ProductsPage() {
                         <button
                             onClick={() => document.getElementById('catalog-grid')?.scrollIntoView({ behavior: 'smooth' })}
                             className="group relative px-12 py-5 rounded-full bg-white text-black text-xs font-bold tracking-[0.2em] uppercase transition-all duration-500 hover:scale-105 active:scale-95 shadow-2xl"
+                            data-testid="products-explore-scroll-button"
                         >
                             <span className="relative z-10 flex items-center gap-3">
                                 {content.explore} <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -182,6 +183,7 @@ export default function ProductsPage() {
                                 viewport={{ once: true, margin: "-100px" }}
                                 transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
                                 className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-24 lg:gap-40`}
+                                data-testid={`product-article-${product.id}`}
                             >
                                 {/* Immersive Heritage Frame */}
                                 <div className="relative w-full lg:w-3/5 group">
@@ -209,6 +211,7 @@ export default function ProductsPage() {
                                                 fill
                                                 className="object-cover transition-all duration-1000 group-hover:scale-105 sepia-[0.05] grayscale-[0.05] hover:sepia-0 hover:grayscale-0"
                                                 priority={index < 2}
+                                                data-testid={`product-image-${product.id}`}
                                             />
                                         </motion.div>
 

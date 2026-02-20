@@ -80,7 +80,7 @@ export default function GalleryPage() {
             <Header />
 
             {/* Hero Section - Parallax Effect & Deep Forest Gradient */}
-            <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+            <section className="relative h-[60vh] flex items-center justify-center overflow-hidden" data-testid="gallery-hero-section">
                 <div className="absolute inset-0 z-0">
                     <Image
                         src="/images/hero.png" // Fallback high-res hero
@@ -117,6 +117,7 @@ export default function GalleryPage() {
                             onClick={() => openLightbox(index)}
                             className="break-inside-avoid group relative block w-full rounded-[24px] overflow-hidden cursor-pointer transform transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(22,163,74,0.3)] bg-white dark:bg-gray-900 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.1)]"
                             style={{ animationDelay: `${index * 100}ms` }} // Staggered reveal
+                            data-testid={`gallery-item-${index}`}
                         >
                             <div className="relative w-full overflow-hidden">
                                 <Image
@@ -148,11 +149,15 @@ export default function GalleryPage() {
                 <div
                     className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 animate-fade-in backdrop-blur-xl"
                     onClick={closeLightbox}
+                    data-testid="gallery-lightbox-modal"
                 >
                     {/* Controls Bar */}
                     <div className="absolute top-6 left-0 right-0 px-8 flex justify-between items-center z-50 pointer-events-none">
                         {/* Counter Removed/Hidden? User said 'tag or caption'. I'll keep counter or remove? I'll keep it as it's navigation aid. */}
-                        <div className="pointer-events-auto px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/10 text-white/90 text-sm font-medium tracking-wider shadow-lg">
+                        <div
+                            className="pointer-events-auto px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/10 text-white/90 text-sm font-medium tracking-wider shadow-lg"
+                            data-testid="gallery-lightbox-counter"
+                        >
                             {lightboxIndex + 1} / {filteredImages.length}
                         </div>
 
@@ -169,6 +174,7 @@ export default function GalleryPage() {
                                 onClick={(e) => { e.stopPropagation(); closeLightbox(); }}
                                 className="p-3 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white transition-all rounded-full border border-white/10 shadow-lg hover:scale-105 active:scale-95 group"
                                 title="Close"
+                                data-testid="gallery-lightbox-close"
                             >
                                 <X className="w-5 h-5 group-hover:rotate-90 transition-transform duration-300" />
                             </button>
@@ -179,6 +185,7 @@ export default function GalleryPage() {
                     <button
                         onClick={(e) => { e.stopPropagation(); goPrev() }}
                         className="hidden md:flex absolute left-8 top-1/2 -translate-y-1/2 p-4 text-white/70 hover:text-white transition-all hover:bg-white/5 rounded-full z-50 hover:scale-110 active:scale-95 backdrop-blur-sm"
+                        data-testid="gallery-lightbox-prev"
                     >
                         <ChevronLeft className="w-12 h-12 stroke-[1.5]" />
                     </button>
@@ -186,6 +193,7 @@ export default function GalleryPage() {
                     <button
                         onClick={(e) => { e.stopPropagation(); goNext() }}
                         className="hidden md:flex absolute right-8 top-1/2 -translate-y-1/2 p-4 text-white/70 hover:text-white transition-all hover:bg-white/5 rounded-full z-50 hover:scale-110 active:scale-95 backdrop-blur-sm"
+                        data-testid="gallery-lightbox-next"
                     >
                         <ChevronRight className="w-12 h-12 stroke-[1.5]" />
                     </button>
@@ -200,6 +208,7 @@ export default function GalleryPage() {
                                 src={filteredImages[lightboxIndex].src}
                                 alt={filteredImages[lightboxIndex].alt}
                                 className="max-w-full max-h-full object-contain drop-shadow-2xl rounded-lg"
+                                data-testid="gallery-lightbox-image"
                             />
                         </div>
                     </div>

@@ -5,21 +5,88 @@ import Footer from '@/components/layout/Footer'
 import Image from 'next/image'
 import { useLanguageStore } from '@/lib/store/useLanguageStore'
 import { useEffect, useState } from 'react'
-import { MapPin, Mail, Phone, Clock, Send, CheckCircle, AlertCircle } from 'lucide-react'
+import { MapPin, Mail, Phone, Clock, Send, CheckCircle, X, ChevronDown } from 'lucide-react'
 import toast from 'react-hot-toast'
+import { trackEnquirySubmission, trackPhoneClick, trackEmailClick } from '@/lib/analytics'
+
+const COUNTRY_CODES = [
+    { code: '+91', flag: '🇮🇳', name: 'India' },
+    { code: '+1', flag: '🇺🇸', name: 'USA' },
+    { code: '+44', flag: '🇬🇧', name: 'UK' },
+    { code: '+61', flag: '🇦🇺', name: 'Australia' },
+    { code: '+971', flag: '🇦🇪', name: 'UAE' },
+    { code: '+966', flag: '🇸🇦', name: 'Saudi Arabia' },
+    { code: '+974', flag: '🇶🇦', name: 'Qatar' },
+    { code: '+65', flag: '🇸🇬', name: 'Singapore' },
+    { code: '+60', flag: '🇲🇾', name: 'Malaysia' },
+    { code: '+49', flag: '🇩🇪', name: 'Germany' },
+    { code: '+33', flag: '🇫🇷', name: 'France' },
+    { code: '+81', flag: '🇯🇵', name: 'Japan' },
+    { code: '+86', flag: '🇨🇳', name: 'China' },
+    { code: '+880', flag: '🇧🇩', name: 'Bangladesh' },
+    { code: '+94', flag: '🇱🇰', name: 'Sri Lanka' },
+]
+
+const MAX_MESSAGE_CHARS = 500
+
+// ── Shared field style helper ──────────────────────────────────────────────
+const fieldCls = (hasError: boolean) =>
+    `w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border rounded-xl text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:border-transparent transition text-sm ${hasError
+        ? 'border-red-400 focus:ring-red-400/30'
+        : 'border-gray-200 dark:border-gray-700 focus:ring-green-500/30 focus:border-green-500'
+    }`
+
+// ── Reusable field wrapper with label, optional hint, optional error ────────
+function PremiumField({
+    label,
+    error,
+    hint,
+    children,
+    testId,
+}: {
+    label: string
+    error?: string
+    hint?: React.ReactNode
+    children: React.ReactNode
+    testId?: string
+}) {
+    return (
+        <div>
+            <div className="flex items-center justify-between mb-1.5">
+                <label className="block text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wide">
+                    {label}
+                </label>
+                {hint && <span>{hint}</span>}
+            </div>
+            {children}
+            {error && (
+                <p
+                    className="mt-1 text-xs text-red-500 flex items-center gap-1"
+                    data-testid={testId ? `${testId}-error` : undefined}
+                >
+                    <span className="inline-block w-1 h-1 rounded-full bg-red-500 shrink-0" />
+                    {error}
+                </p>
+            )}
+        </div>
+    )
+}
+
 
 export default function ContactPage() {
     const { language } = useLanguageStore()
     const [isMounted, setIsMounted] = useState(false)
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [submitted, setSubmitted] = useState(false)
+    const [countryCode, setCountryCode] = useState('+91')
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         phone: '',
-        subject: 'General Inquiry',
+        subject: '',
         message: '',
     })
+    const [formErrors, setFormErrors] = useState<{ name?: string; email?: string; phone?: string; subject?: string; message?: string }>({})
 
     useEffect(() => {
         setIsMounted(true)
@@ -43,8 +110,14 @@ export default function ContactPage() {
             send: 'Send Message',
             sending: 'Sending...',
             success: 'Message Sent Successfully!',
-            successDesc: 'Thank you for contacting us. We\'ll get back to you within 24 hours.',
-            sendAnother: 'Send Another Message',
+            successDesc: 'Thank you for reaching out. We\'ll get back to you within 24 hours.',
+            closeForm: 'Close',
+            phoneError: 'Please enter a valid 10-digit phone number.',
+            messageError: `Message cannot exceed ${MAX_MESSAGE_CHARS} characters.`,
+            charsLeft: 'characters remaining',
+            phoneLabel: 'Phone Number',
+            phonePlaceholderShort: 'Enter 10-digit number',
+            sendAnother: 'Send Another Message',   // kept for TS safety
             visitUs: 'Visit Our Farm',
             address: 'SIRUVATU, Oddanchatram, Vadakadu, Tamil Nadu 624212, India',
             emailUs: 'Email Us',
@@ -83,6 +156,12 @@ export default function ContactPage() {
             sending: 'அனுப்புகிறது...',
             success: 'செய்தி வெற்றிகரமாக அனுப்பப்பட்டது!',
             successDesc: 'எங்களைத் தொடர்பு கொண்டதற்கு நன்றி. 24 மணி நேரத்திற்குள் உங்களுக்கு பதிலளிப்போம்.',
+            closeForm: 'மூடு',
+            phoneError: 'சரியான 10 இலக்க தொலைபேசி எண்ணை உள்ளிடவும்.',
+            messageError: `செய்தி ${MAX_MESSAGE_CHARS} எழுத்துகளுக்கு மேல் இருக்க கூடாது.`,
+            charsLeft: 'எழுத்துகள் மீதம்',
+            phoneLabel: 'தொலைபேசி எண்',
+            phonePlaceholderShort: '10 இலக்க எண் உள்ளிடவும்',
             sendAnother: 'மற்றொரு செய்தி அனுப்பு',
             visitUs: 'எங்கள் பண்ணைக்கு வாருங்கள்',
             address: 'சிறுவட்டு, ஒட்டன்சத்திரம், வடக்கடு, தமிழ்நாடு 624212, இந்தியா',
@@ -110,21 +189,42 @@ export default function ContactPage() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
+
+        // — Full custom validation (no browser popups)
+        const digitsOnly = formData.phone.replace(/\D/g, '')
+        const errors: { name?: string; email?: string; phone?: string; subject?: string; message?: string } = {}
+        if (!formData.name.trim()) errors.name = language === 'ta' ? 'பெயர் தேவை' : 'Full name is required'
+        if (!formData.email.trim()) errors.email = language === 'ta' ? 'மின்னஞ்சல் தேவை' : 'Email is required'
+        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) errors.email = language === 'ta' ? 'சரியான மின்னஞ்சல் உள்ளிடுங்கள்' : 'Enter a valid email'
+        if (!formData.phone || !/^\d{10}$/.test(digitsOnly)) {
+            errors.phone = content.phoneError
+        }
+        if (!formData.subject) errors.subject = language === 'ta' ? 'பொருள் தேர்வு தேவை' : 'Please select a subject'
+        if (!formData.message.trim()) errors.message = language === 'ta' ? 'செய்தி தேவை' : 'Message is required'
+        else if (formData.message.length > MAX_MESSAGE_CHARS) errors.message = content.messageError
+        if (Object.keys(errors).length > 0) {
+            setFormErrors(errors)
+            return
+        }
+        setFormErrors({})
         setIsSubmitting(true)
 
         try {
+            const fullPhone = formData.phone ? `${countryCode} ${formData.phone}` : ''
             const res = await fetch('/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({ ...formData, phone: fullPhone }),
             })
 
             const data = await res.json()
 
             if (res.ok) {
+                trackEnquirySubmission('contact_page')
                 setSubmitted(true)
                 toast.success(content.success)
                 setFormData({ name: '', email: '', phone: '', subject: 'General Inquiry', message: '' })
+                setCountryCode('+91')
             } else {
                 toast.error(data.error || 'Something went wrong')
             }
@@ -136,8 +236,26 @@ export default function ContactPage() {
     }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-        setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+        const { name, value } = e.target
+        // Enforce message char limit
+        if (name === 'message' && value.length > MAX_MESSAGE_CHARS) return
+        // For phone: strip everything that is not a digit, cap at 10
+        if (name === 'phone') {
+            const digitsOnly = value.replace(/\D/g, '').slice(0, 10)
+            setFormData((prev) => ({ ...prev, phone: digitsOnly }))
+            if (formErrors.phone) setFormErrors((prev) => ({ ...prev, phone: undefined }))
+            return
+        }
+        setFormData((prev) => ({ ...prev, [name]: value }))
+        // Clear relevant error on change
+        if (formErrors[name as keyof typeof formErrors]) {
+            setFormErrors((prev) => ({ ...prev, [name]: undefined }))
+        }
     }
+
+    const messageCharsLeft = MAX_MESSAGE_CHARS - formData.message.length
+    const messageNearLimit = messageCharsLeft <= 50
+    const messageAtLimit = messageCharsLeft === 0
 
     return (
         <div className="min-h-screen transition-colors duration-300 arima-font">
@@ -169,196 +287,281 @@ export default function ContactPage() {
 
             {/* Main Content */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                    {/* Contact Info Cards */}
-                    <div className="space-y-6">
-                        {/* Address */}
-                        <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-shadow">
-                            <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
-                                    <MapPin className="w-6 h-6 text-green-600 dark:text-green-500" />
+
+                {/* ════════════════════════════════════════
+                     PREMIUM SPLIT-PANEL CONTACT FORM
+                    ════════════════════════════════════════ */}
+                <div className="rounded-3xl overflow-hidden shadow-2xl shadow-green-900/10 border border-green-100 dark:border-green-900/20 mb-12">
+                    <div className="grid grid-cols-1 lg:grid-cols-5">
+
+                        {/* ── Left branded panel ── */}
+                        <div className="lg:col-span-2 relative bg-gradient-to-br from-green-800 via-emerald-900 to-green-950 p-8 lg:p-10 flex flex-col justify-between overflow-hidden min-h-[480px]">
+                            {/* decorative blobs */}
+                            <div className="absolute -top-16 -left-16 w-64 h-64 bg-green-500/20 rounded-full blur-3xl pointer-events-none" />
+                            <div className="absolute bottom-0 right-0 w-72 h-72 bg-emerald-400/10 rounded-full blur-3xl pointer-events-none" />
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-white/5 rounded-full blur-2xl pointer-events-none" />
+
+                            <div className="relative z-10">
+                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-green-300 text-xs font-semibold tracking-widest uppercase border border-white/10 mb-6">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse inline-block" />
+                                    {language === 'ta' ? 'தொடர்பு கொள்ள' : 'Get in Touch'}
                                 </div>
-                                <div>
-                                    <h3 className="font-bold text-gray-900 dark:text-white mb-1">{content.visitUs}</h3>
-                                    <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{content.address}</p>
-                                </div>
+                                <h2 className="text-3xl font-bold text-white mb-3 leading-tight">
+                                    {content.formTitle}
+                                </h2>
+                                <p className="text-green-100/60 text-sm leading-relaxed">
+                                    {language === 'ta'
+                                        ? 'உங்கள் கேள்விகளுக்கு 24 மணி நேரத்திற்குள் பதில் அளிப்போம்.'
+                                        : 'We respond to every enquiry within 24 hours — guaranteed.'}
+                                </p>
                             </div>
+
+                            {/* contact detail strips — clickable */}
+                            <div className="relative z-10 space-y-3 mt-10">
+                                {[
+                                    {
+                                        icon: <MapPin className="w-4 h-4" />,
+                                        val: "LOURDE'S GARDEN",
+                                        href: 'https://maps.app.goo.gl/V6dsG6TcT7jjnBkR9',
+                                        target: '_blank',
+                                    },
+                                    {
+                                        icon: <Mail className="w-4 h-4" />,
+                                        val: 'lourdesgarden.odc@gmail.com',
+                                        href: 'mailto:lourdesgarden.odc@gmail.com',
+                                        onClick: () => trackEmailClick('contact_page'),
+                                    },
+                                    {
+                                        icon: <Phone className="w-4 h-4" />,
+                                        val: '+91 96264 94555',
+                                        href: 'tel:+919626494555',
+                                        onClick: () => trackPhoneClick('contact_page'),
+                                    },
+                                    {
+                                        icon: <Clock className="w-4 h-4" />,
+                                        val: content.hoursValue,
+                                    },
+                                ].map((item, i) => (
+                                    <div key={i} className="flex items-center gap-3 group">
+                                        <div className="w-8 h-8 rounded-lg bg-white/10 group-hover:bg-white/15 flex items-center justify-center text-green-300 flex-shrink-0 transition">
+                                            {item.icon}
+                                        </div>
+                                        {item.href ? (
+                                            <a
+                                                href={item.href}
+                                                target={item.target}
+                                                rel={item.target === '_blank' ? 'noopener noreferrer' : undefined}
+                                                onClick={item.onClick}
+                                                className="text-green-100/75 text-xs leading-snug hover:text-white hover:underline transition-colors"
+                                                data-testid={`contact-link-${item.val.toLowerCase().replace(/['\s,]+/g, '-')}`}
+                                            >
+                                                {item.val}
+                                            </a>
+                                        ) : (
+                                            <span
+                                                className="text-green-100/75 text-xs leading-snug"
+                                                data-testid={`contact-info-${item.val.toLowerCase().replace(/['\s,]+/g, '-')}`}
+                                            >
+                                                {item.val}
+                                            </span>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* decorative leaf */}
+                            <div className="relative z-10 mt-8 opacity-20 text-6xl select-none leading-none">🌿</div>
                         </div>
 
-                        {/* Email */}
-                        <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-shadow">
-                            <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
-                                    <Mail className="w-6 h-6 text-blue-600 dark:text-blue-500" />
-                                </div>
-                                <div>
-                                    <h3 className="font-bold text-gray-900 dark:text-white mb-1">{content.emailUs}</h3>
-                                    <a href="mailto:lourdesgarden.odc@gmail.com" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">
-                                        lourdesgarden.odc@gmail.com
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Phone */}
-                        <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-shadow">
-                            <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
-                                    <Phone className="w-6 h-6 text-purple-600 dark:text-purple-500" />
-                                </div>
-                                <div>
-                                    <h3 className="font-bold text-gray-900 dark:text-white mb-1">{content.callUs}</h3>
-                                    <a href="tel:+919626494555" className="text-sm text-purple-600 dark:text-purple-400 hover:underline">
-                                        +91 96264 94555
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Hours */}
-                        <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-shadow">
-                            <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
-                                    <Clock className="w-6 h-6 text-amber-600 dark:text-amber-500" />
-                                </div>
-                                <div>
-                                    <h3 className="font-bold text-gray-900 dark:text-white mb-1">{content.hours}</h3>
-                                    <p className="text-sm text-gray-500 dark:text-gray-400">{content.hoursValue}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Contact Form */}
-                    <div className="lg:col-span-2">
-                        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-8">
+                        {/* ── Right form panel ── */}
+                        <div className="lg:col-span-3 bg-white dark:bg-gray-900 p-8 lg:p-10">
                             {submitted ? (
-                                <div className="text-center py-12">
-                                    <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-6" />
-                                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">{content.success}</h3>
-                                    <p className="text-gray-500 dark:text-gray-400 mb-8">{content.successDesc}</p>
+                                /* ── Premium Success State ── */
+                                <div className="flex flex-col items-center justify-center h-full py-12 text-center">
+                                    <div className="relative inline-flex mb-6">
+                                        <div className="absolute inset-0 bg-green-400/25 rounded-full blur-2xl animate-pulse scale-150" />
+                                        <div className="relative w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-600 rounded-full flex items-center justify-center shadow-xl shadow-green-500/30">
+                                            <CheckCircle className="w-10 h-10 text-white" />
+                                        </div>
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{content.success}</h3>
+                                    <p className="text-gray-400 dark:text-gray-500 text-sm max-w-xs leading-relaxed mb-8">{content.successDesc}</p>
                                     <button
                                         onClick={() => setSubmitted(false)}
-                                        className="px-6 py-3 bg-green-600 text-white rounded-xl hover:bg-green-700 transition font-medium"
+                                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition font-semibold text-sm border border-gray-200 dark:border-gray-700"
+                                        data-testid="contact-close-button"
                                     >
-                                        {content.sendAnother}
+                                        <X className="w-4 h-4" />
+                                        {content.closeForm}
                                     </button>
                                 </div>
                             ) : (
-                                <>
-                                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">{content.formTitle}</h2>
-                                    <form onSubmit={handleSubmit} className="space-y-6">
-                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                            {/* Name */}
-                                            <div>
-                                                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                                    {content.name} <span className="text-red-500">*</span>
-                                                </label>
-                                                <input
-                                                    type="text"
-                                                    name="name"
-                                                    required
-                                                    value={formData.name}
-                                                    onChange={handleChange}
-                                                    placeholder={content.namePlaceholder}
-                                                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition"
-                                                />
-                                            </div>
+                                <form onSubmit={handleSubmit} noValidate className="space-y-5" data-testid="contact-form">
 
-                                            {/* Email */}
-                                            <div>
-                                                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                                    {content.email} <span className="text-red-500">*</span>
-                                                </label>
-                                                <input
-                                                    type="email"
-                                                    name="email"
-                                                    required
-                                                    value={formData.email}
-                                                    onChange={handleChange}
-                                                    placeholder={content.emailPlaceholder}
-                                                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition"
-                                                />
-                                            </div>
+                                    {/* Row 1: Name + Email */}
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                        <PremiumField label={`${content.name} *`} error={formErrors.name} testId="contact-name">
+                                            <input
+                                                type="text"
+                                                name="name"
+                                                autoComplete="name"
+                                                value={formData.name}
+                                                onChange={handleChange}
+                                                placeholder={content.namePlaceholder}
+                                                className={fieldCls(!!formErrors.name)}
+                                                data-testid="contact-name-input"
+                                            />
+                                        </PremiumField>
+                                        <PremiumField label={`${content.email} *`} error={formErrors.email} testId="contact-email">
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                autoComplete="email"
+                                                value={formData.email}
+                                                onChange={handleChange}
+                                                placeholder={content.emailPlaceholder}
+                                                className={fieldCls(!!formErrors.email)}
+                                                data-testid="contact-email-input"
+                                            />
+                                        </PremiumField>
+                                    </div>
 
-                                            {/* Phone */}
-                                            <div>
-                                                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                                    {content.phone}
-                                                </label>
+                                    {/* Row 2: Phone + Subject */}
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                        {/* Phone */}
+                                        <PremiumField
+                                            label={`${content.phoneLabel} *`}
+                                            error={formErrors.phone}
+                                            testId="contact-phone"
+                                            hint={
+                                                <span
+                                                    className={`tabular-nums font-medium transition-colors text-xs ${formData.phone.length === 10 ? 'text-green-500' : 'text-gray-400'}`}
+                                                    data-testid="contact-phone-counter"
+                                                >
+                                                    {formData.phone.length}/10
+                                                </span>
+                                            }
+                                        >
+                                            <div className={`flex rounded-xl overflow-hidden border transition-all ${formErrors.phone ? 'border-red-400 ring-2 ring-red-200 dark:ring-red-900' : 'border-gray-200 dark:border-gray-700 focus-within:border-green-500 focus-within:ring-2 focus-within:ring-green-500/20'} bg-gray-50 dark:bg-gray-800`}>
+                                                <div className="relative flex-shrink-0">
+                                                    <select
+                                                        value={countryCode}
+                                                        onChange={(e) => setCountryCode(e.target.value)}
+                                                        aria-label="Country code"
+                                                        className="appearance-none h-full pl-3 pr-6 py-3 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white text-sm font-semibold border-r border-gray-200 dark:border-gray-700 focus:outline-none cursor-pointer"
+                                                        data-testid="contact-country-code-select"
+                                                    >
+                                                        {COUNTRY_CODES.map((c) => (
+                                                            <option key={c.code} value={c.code}>{c.flag} {c.code}</option>
+                                                        ))}
+                                                    </select>
+                                                    <ChevronDown className="absolute right-1 top-1/2 -translate-y-1/2 w-3 h-3 text-gray-400 pointer-events-none" />
+                                                </div>
                                                 <input
                                                     type="tel"
                                                     name="phone"
                                                     value={formData.phone}
                                                     onChange={handleChange}
-                                                    placeholder={content.phonePlaceholder}
-                                                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition"
+                                                    onKeyDown={(e) => {
+                                                        const allowed = ['Backspace', 'Delete', 'Tab', 'Escape', 'Enter', 'ArrowLeft', 'ArrowRight', 'Home', 'End']
+                                                        if (allowed.includes(e.key)) return
+                                                        if ((e.ctrlKey || e.metaKey) && ['a', 'c', 'v', 'x'].includes(e.key.toLowerCase())) return
+                                                        if (!/^\d$/.test(e.key)) e.preventDefault()
+                                                    }}
+                                                    placeholder={content.phonePlaceholderShort}
+                                                    maxLength={10}
+                                                    inputMode="numeric"
+                                                    className="flex-1 px-3 py-3 bg-transparent text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 text-sm focus:outline-none tracking-widest font-mono"
+                                                    data-testid="contact-phone-input"
                                                 />
                                             </div>
+                                        </PremiumField>
 
-                                            {/* Subject */}
-                                            <div>
-                                                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                                    {content.subject} <span className="text-red-500">*</span>
-                                                </label>
-                                                <select
-                                                    name="subject"
-                                                    required
-                                                    value={formData.subject}
-                                                    onChange={handleChange}
-                                                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition"
-                                                >
-                                                    {content.subjects.map((s) => (
-                                                        <option key={s} value={s}>{s}</option>
-                                                    ))}
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        {/* Message */}
-                                        <div>
-                                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                                {content.message} <span className="text-red-500">*</span>
-                                            </label>
-                                            <textarea
-                                                name="message"
-                                                required
-                                                rows={5}
-                                                value={formData.message}
+                                        {/* Subject */}
+                                        <PremiumField label={`${content.subject} *`} error={formErrors.subject} testId="contact-subject">
+                                            <select
+                                                name="subject"
+                                                value={formData.subject}
                                                 onChange={handleChange}
-                                                placeholder={content.messagePlaceholder}
-                                                className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition resize-none"
+                                                className={fieldCls(!!formErrors.subject)}
+                                                data-testid="contact-subject-select"
+                                            >
+                                                <option value="" disabled>
+                                                    {language === 'ta' ? '— ஒன்றை தேர்ந்தெடுக்கவும் —' : '— Select a subject —'}
+                                                </option>
+                                                {content.subjects.map((s) => (
+                                                    <option key={s} value={s}>{s}</option>
+                                                ))}
+                                            </select>
+                                        </PremiumField>
+                                    </div>
+
+                                    {/* Message */}
+                                    <PremiumField
+                                        label={`${content.message} *`}
+                                        error={formErrors.message}
+                                        testId="contact-message"
+                                        hint={
+                                            <span
+                                                className={`tabular-nums font-semibold text-xs transition-colors ${messageAtLimit ? 'text-red-500' : messageNearLimit ? 'text-amber-500' : 'text-gray-400'}`}
+                                                data-testid="contact-message-counter"
+                                            >
+                                                {messageCharsLeft}/{MAX_MESSAGE_CHARS}
+                                            </span>
+                                        }
+                                    >
+                                        <textarea
+                                            name="message"
+                                            rows={4}
+                                            value={formData.message}
+                                            onChange={handleChange}
+                                            placeholder={content.messagePlaceholder}
+                                            className={`${fieldCls(!!formErrors.message || messageAtLimit)} resize-none`}
+                                            data-testid="contact-message-textarea"
+                                        />
+                                        <div className="mt-1.5 h-0.5 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+                                            <div
+                                                className={`h-full rounded-full transition-all duration-300 ${messageAtLimit ? 'bg-red-500' : messageNearLimit ? 'bg-amber-400' : 'bg-green-500'}`}
+                                                style={{ width: `${((MAX_MESSAGE_CHARS - messageCharsLeft) / MAX_MESSAGE_CHARS) * 100}%` }}
                                             />
                                         </div>
+                                    </PremiumField>
 
-                                        {/* Submit */}
+                                    {/* Submit */}
+                                    <div className="pt-2">
                                         <button
                                             type="submit"
-                                            disabled={isSubmitting}
-                                            className="w-full md:w-auto px-8 py-4 bg-green-600 text-white rounded-xl hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed transition font-semibold text-lg flex items-center justify-center gap-2"
+                                            disabled={isSubmitting || messageAtLimit}
+                                            className="w-full relative group overflow-hidden bg-gradient-to-br from-green-500 to-emerald-700 disabled:from-gray-400 disabled:to-gray-500 text-white py-4 rounded-2xl font-bold text-base shadow-lg shadow-green-500/25 hover:shadow-green-500/40 transition-all duration-300 flex items-center justify-center gap-2"
+                                            data-testid="contact-submit-button"
                                         >
                                             {isSubmitting ? (
                                                 <>
-                                                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                                                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                                                     {content.sending}
                                                 </>
                                             ) : (
                                                 <>
-                                                    <Send className="w-5 h-5" />
+                                                    <Send className="w-4 h-4" />
                                                     {content.send}
                                                 </>
                                             )}
                                         </button>
-                                    </form>
-                                </>
+                                    </div>
+
+                                    <p className="text-center text-xs text-gray-400 dark:text-gray-600">
+                                        {language === 'ta' ? '* அனைத்து புலங்களும் கட்டாயமானவை' : '* All starred fields are required'}
+                                    </p>
+                                </form>
                             )}
                         </div>
                     </div>
                 </div>
-            </section>
+
+            </section >
 
             {/* Route Map Section */}
-            <section className="bg-white dark:bg-black py-20 transition-colors">
+            < section className="bg-white dark:bg-black py-20 transition-colors" >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-green-500/10 text-green-600 dark:text-green-500 text-sm font-medium tracking-wide border border-green-500/20 mb-6 mx-auto">
@@ -473,10 +676,10 @@ export default function ContactPage() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Map Section */}
-            <section className="bg-gray-50 dark:bg-gray-900/50 py-16 transition-colors">
+            < section className="bg-gray-50 dark:bg-gray-900/50 py-16 transition-colors" >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">{content.mapTitle}</h2>
                     <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700 h-[400px]">
@@ -503,9 +706,9 @@ export default function ContactPage() {
                         </a>
                     </div>
                 </div>
-            </section>
+            </section >
 
             <Footer />
-        </div>
+        </div >
     )
 }

@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { Leaf, Users, Globe, ArrowRight } from 'lucide-react'
 import { useLanguageStore } from '@/lib/store/useLanguageStore'
 import { useEffect, useState } from 'react'
+import BusinessGrowthSection from '@/components/sections/BusinessGrowthSection'
 
 export default function HomePage() {
   const { language } = useLanguageStore()
@@ -89,13 +90,14 @@ export default function HomePage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden" data-testid="home-hero-section">
         <Image
           src="/images/hero.png"
           alt="Lourdes Garden Farm"
           fill
           className="object-cover"
           priority
+          data-testid="home-hero-image"
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 text-center text-white px-4 max-w-4xl">
@@ -112,12 +114,14 @@ export default function HomePage() {
             <Link
               href="/products"
               className="px-8 py-4 bg-green-600 text-white rounded-full hover:bg-green-700 transition font-semibold text-lg flex items-center gap-2"
+              data-testid="home-hero-shop-button"
             >
               {content.shopBtn} <ArrowRight className="w-5 h-5" />
             </Link>
             <Link
               href="/about"
               className="px-8 py-4 bg-white/20 backdrop-blur-md text-white border border-white/30 rounded-full hover:bg-white/30 transition font-semibold text-lg"
+              data-testid="home-hero-story-button"
             >
               {content.storyBtn}
             </Link>
@@ -128,7 +132,7 @@ export default function HomePage() {
       {/* Features Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          <div className="text-center group">
+          <div className="text-center group" data-testid="home-feature-organic">
             <div className="bg-green-50 dark:bg-green-900/20 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-green-600 group-hover:text-white transition-all duration-300">
               <Leaf className="w-10 h-10 text-green-600 dark:text-green-500 group-hover:text-white" />
             </div>
@@ -138,7 +142,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="text-center group">
+          <div className="text-center group" data-testid="home-feature-export">
             <div className="bg-blue-50 dark:bg-blue-900/20 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
               <Globe className="w-10 h-10 text-blue-600 dark:text-blue-500 group-hover:text-white" />
             </div>
@@ -148,7 +152,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="text-center group">
+          <div className="text-center group" data-testid="home-feature-wholesale">
             <div className="bg-purple-50 dark:bg-purple-900/20 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-600 group-hover:text-white transition-all duration-300">
               <Users className="w-10 h-10 text-purple-600 dark:text-purple-500 group-hover:text-white" />
             </div>
@@ -170,13 +174,18 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {products.map((product) => (
-              <div key={product.id} className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-100 dark:border-gray-700">
+              <div
+                key={product.id}
+                className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-100 dark:border-gray-700"
+                data-testid={`featured-product-card-${product.id}`}
+              >
                 <div className="relative h-64 w-full">
                   <Image
                     src={product.primaryImage || '/images/placeholder.png'}
                     alt={product.name}
                     fill
                     className="object-cover transition-transform duration-500 hover:scale-110"
+                    data-testid={`featured-product-image-${product.id}`}
                   />
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
@@ -188,6 +197,7 @@ export default function HomePage() {
                     <Link
                       href="/products"
                       className="inline-flex items-center gap-2 text-green-600 dark:text-green-500 font-semibold hover:gap-3 transition-all"
+                      data-testid={`featured-product-explore-${product.id}`}
                     >
                       {content.explore} <ArrowRight className="w-4 h-4" />
                     </Link>
@@ -198,6 +208,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Business Growth & Impact Section */}
+      <BusinessGrowthSection />
 
       {/* Footer */}
       <Footer />

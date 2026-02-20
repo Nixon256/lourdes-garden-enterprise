@@ -61,7 +61,7 @@ export default function AboutPage() {
             <Header />
 
             {/* Hero Section */}
-            <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+            <section className="relative h-[60vh] flex items-center justify-center overflow-hidden" data-testid="about-hero-section">
                 <Image
                     src="/images/hero.png"
                     alt="Our Farm"
@@ -96,8 +96,13 @@ export default function AboutPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 my-16">
                         {content.pillars.map((pillar, idx) => {
                             const Icon = IconMap[idx]
+                            const pillarTestId = pillar.title.toLowerCase().replace(/[\s&()]+/g, '-')
                             return (
-                                <div key={idx} className="bg-gray-50 dark:bg-gray-900 p-8 rounded-2xl border border-gray-100 dark:border-gray-800 transition-colors">
+                                <div
+                                    key={idx}
+                                    className="bg-gray-50 dark:bg-gray-900 p-8 rounded-2xl border border-gray-100 dark:border-gray-800 transition-colors"
+                                    data-testid={`about-pillar-card-${pillarTestId}`}
+                                >
                                     <Icon className="w-12 h-12 text-green-600 dark:text-green-500 mb-6" />
                                     <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{pillar.title}</h3>
                                     <p>{pillar.desc}</p>
@@ -122,6 +127,7 @@ export default function AboutPage() {
                 <Link
                     href="/products"
                     className="inline-block px-10 py-5 bg-white dark:bg-gray-200 text-green-600 dark:text-green-800 rounded-full hover:bg-green-50 dark:hover:bg-white transition font-bold text-xl shadow-xl"
+                    data-testid="about-cta-button"
                 >
                     {content.ctaBtn}
                 </Link>

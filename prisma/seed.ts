@@ -102,6 +102,7 @@ async function main() {
         where: { slug: 'organic-black-pepper' },
         update: {
             name: 'Organic Black Pepper',
+            nameTa: 'ஆர்கானிக் கருமிளகு',
             type: ProductType.SPICE,
             categoryId: categories[1].id,
             storyEn: 'Grown in the monsoon mists of Oddanchatram, our black pepper is sun-dried to perfection, capturing the untamed essence of the Western Ghats.',
@@ -115,6 +116,7 @@ async function main() {
         create: {
             sku: 'BP-001',
             name: 'Organic Black Pepper',
+            nameTa: 'ஆர்கானிக் கருமிளகு',
             slug: 'organic-black-pepper',
             type: ProductType.SPICE,
             categoryId: categories[1].id,
@@ -128,7 +130,7 @@ async function main() {
             status: ProductStatus.ACTIVE,
             isFeatured: true,
             unit: 'kg',
-            primaryImage: '/images/pepper-main.jpg',
+            primaryImage: '/images/products/Black Pepper.png',
         },
     })
     products.push(blackPepper)
@@ -138,6 +140,7 @@ async function main() {
         where: { slug: 'mountain-banana' },
         update: {
             name: 'Mountain Banana',
+            nameTa: 'மலை வாழைப்பழம்',
             type: ProductType.FRUIT,
             categoryId: categories[0].id,
             storyEn: 'Hand-nurtured in our high-altitude groves, these bananas carry the natural sweetness of the mountain sun and the richness of pure forest soil.',
@@ -151,6 +154,7 @@ async function main() {
         create: {
             sku: 'BN-001',
             name: 'Mountain Banana',
+            nameTa: 'மலை வாழைப்பழம்',
             slug: 'mountain-banana',
             type: ProductType.FRUIT,
             categoryId: categories[0].id,
@@ -174,6 +178,7 @@ async function main() {
         where: { slug: 'fresh-mountain-lemons' },
         update: {
             name: 'Fresh Mountain Lemons',
+            nameTa: 'மலை எலுமிச்சை',
             type: ProductType.FRUIT,
             categoryId: categories[0].id,
             storyEn: 'A burst of mountain citrus, these radiant lemons are hand-picked at peak ripeness to bring refreshing zest to world-class kitchens.',
@@ -187,6 +192,7 @@ async function main() {
         create: {
             sku: 'LM-001',
             name: 'Fresh Mountain Lemons',
+            nameTa: 'மலை எலுமிச்சை',
             slug: 'fresh-mountain-lemons',
             type: ProductType.FRUIT,
             categoryId: categories[0].id,
@@ -210,6 +216,7 @@ async function main() {
         where: { slug: 'premium-avocado' },
         update: {
             name: 'Premium Avocado',
+            nameTa: 'வெண்ணெய் பழம் (அவகேடோ)',
             type: ProductType.FRUIT,
             categoryId: categories[0].id,
             storyEn: 'Velvety and rich, our cloud-forest avocados are cultivated with patience, offering a buttery texture prized by health-conscious gourmets.',
@@ -223,6 +230,7 @@ async function main() {
         create: {
             sku: 'AV-001',
             name: 'Premium Avocado',
+            nameTa: 'வெண்ணெய் பழம் (அவகேடோ)',
             slug: 'premium-avocado',
             type: ProductType.FRUIT,
             categoryId: categories[0].id,
@@ -246,6 +254,7 @@ async function main() {
         where: { slug: 'red-banana' },
         update: {
             name: 'Red Banana',
+            nameTa: 'செவ்வாழை',
             type: ProductType.FRUIT,
             categoryId: categories[0].id,
             storyEn: 'Rare and revitalizing, our Red Bananas are prized for their creamy texture and hint of raspberry-like sweetness.',
@@ -259,6 +268,7 @@ async function main() {
         create: {
             sku: 'RB-001',
             name: 'Red Banana',
+            nameTa: 'செவ்வாழை',
             slug: 'red-banana',
             type: ProductType.FRUIT,
             categoryId: categories[0].id,
@@ -282,6 +292,7 @@ async function main() {
         where: { slug: 'organic-cardamom' },
         update: {
             name: 'Elaichi (Green Cardamom)',
+            nameTa: 'ஏலக்காய் (பச்சை ஏலம்)',
             type: ProductType.SPICE,
             categoryId: categories[1].id,
             storyEn: 'The Queen of Spices, harvested from the high estates of Vadakadu, filling the air with its divine and cool fragrance.',
@@ -295,6 +306,7 @@ async function main() {
         create: {
             sku: 'EC-001',
             name: 'Elaichi (Green Cardamom)',
+            nameTa: 'ஏலக்காய் (பச்சை ஏலம்)',
             slug: 'organic-cardamom',
             type: ProductType.SPICE,
             categoryId: categories[1].id,
@@ -318,6 +330,7 @@ async function main() {
         where: { slug: 'arabica-coffee-plant' },
         update: {
             name: 'Coffee Plant (Arabica)',
+            nameTa: 'காபி செடி (அரேபிகா)',
             type: ProductType.TREE,
             categoryId: categories[2].id,
             storyEn: 'Born in the shade of the Western Ghats, these saplings grow to produce the finest beans that have waked the world for centuries.',
@@ -331,6 +344,7 @@ async function main() {
         create: {
             sku: 'CP-001',
             name: 'Coffee Plant (Arabica)',
+            nameTa: 'காபி செடி (அரேபிகா)',
             slug: 'arabica-coffee-plant',
             type: ProductType.TREE,
             categoryId: categories[2].id,
@@ -354,6 +368,7 @@ async function main() {
         where: { slug: 'alphonso-mango' },
         update: {
             name: 'Mango (Alphonso)',
+            nameTa: 'மாம்பழம் (அல்போன்ஸோ)',
             type: ProductType.FRUIT,
             categoryId: categories[0].id,
             storyEn: 'The King of Fruits, ripened naturally in our orchards, offering a burst of golden sunshine in every bite.',
@@ -367,6 +382,7 @@ async function main() {
         create: {
             sku: 'MG-001',
             name: 'Mango (Alphonso)',
+            nameTa: 'மாம்பழம் (அல்போன்ஸோ)',
             slug: 'alphonso-mango',
             type: ProductType.FRUIT,
             categoryId: categories[0].id,
@@ -390,6 +406,7 @@ async function main() {
         where: { slug: 'mountain-jackfruit' },
         update: {
             name: 'Jack Fruit',
+            nameTa: 'பலாப்பழம்',
             type: ProductType.FRUIT,
             categoryId: categories[0].id,
             storyEn: "A giant's bounty, these massive fruits harbor golden bulbs of honey-like sweetness deep within their spiny skin.",
@@ -403,6 +420,7 @@ async function main() {
         create: {
             sku: 'JF-001',
             name: 'Jack Fruit',
+            nameTa: 'பலாப்பழம்',
             slug: 'mountain-jackfruit',
             type: ProductType.FRUIT,
             categoryId: categories[0].id,
@@ -426,6 +444,7 @@ async function main() {
         where: { slug: 'silver-oak-timber' },
         update: {
             name: 'Silver Oak',
+            nameTa: 'வெள்ளி ஓக் மரம்',
             type: ProductType.TREE,
             categoryId: categories[2].id,
             storyEn: 'The elegant guardians of the hills, providing shade to coffee and timber for the future, standing tall and shimmering.',
@@ -439,6 +458,7 @@ async function main() {
         create: {
             sku: 'SO-001',
             name: 'Silver Oak',
+            nameTa: 'வெள்ளி ஓக் மரம்',
             slug: 'silver-oak-timber',
             type: ProductType.TREE,
             categoryId: categories[2].id,
@@ -462,6 +482,7 @@ async function main() {
         where: { slug: 'teak-timber' },
         update: {
             name: 'Teak Oak',
+            nameTa: 'தேக்கு மரம்',
             type: ProductType.TREE,
             categoryId: categories[2].id,
             storyEn: 'The gold standard of timber, grown with patience and resilience to furnish homes with a legacy of strength.',
@@ -475,6 +496,7 @@ async function main() {
         create: {
             sku: 'TK-001',
             name: 'Teak Oak',
+            nameTa: 'தேக்கு மரம்',
             slug: 'teak-timber',
             type: ProductType.TREE,
             categoryId: categories[2].id,
@@ -498,6 +520,7 @@ async function main() {
         where: { slug: 'silk-cotton-tree' },
         update: {
             name: 'Silk Cotton Tree',
+            nameTa: 'இலவம் பருத்தி மரம்',
             type: ProductType.TREE,
             categoryId: categories[2].id,
             storyEn: 'The silent giants that explode into vibrant red flowers, eventually giving away pure silk cotton to soothe the world.',
@@ -511,12 +534,13 @@ async function main() {
         create: {
             sku: 'SC-001',
             name: 'Silk Cotton Tree',
+            nameTa: 'இலவம் பருத்தி மரம்',
             slug: 'silk-cotton-tree',
             type: ProductType.TREE,
             categoryId: categories[2].id,
             descriptionEn: 'Majestic silk cotton trees providing natural fiber.',
             storyEn: 'The silent giants that explode into vibrant red flowers.',
-            storyTa: 'இயற்கையான இலவம் பஞ்சை வழங்கும் ராட்சத மரங்கள் .',
+            storyTa: 'இயற்கையான இலவம் பஞ்சை வழங்கும் ராட்சத மரங்கள்.',
             harvestingSeason: 'Cotton Harvest (Annual)',
             basePrice: 500,
             retailPrice: 700,
@@ -524,7 +548,7 @@ async function main() {
             status: ProductStatus.ACTIVE,
             isFeatured: true,
             unit: 'tree',
-            primaryImage: '/images/gallery/20210820_095720.jpg',
+            primaryImage: '/images/products/Silk cotton Tree.png',
         },
     })
     products.push(silkCotton)
