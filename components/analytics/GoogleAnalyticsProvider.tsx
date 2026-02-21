@@ -1,10 +1,9 @@
-'use client'
-
 /**
  * Google Analytics 4 component for Lourdes Garden
- * Add GA_MEASUREMENT_ID to your .env.local file
+ * Add NEXT_PUBLIC_GA_MEASUREMENT_ID to your .env file and Vercel environment variables.
  *
- * Usage: Add <GoogleAnalyticsProvider /> inside <body> in app/layout.tsx
+ * Usage: Add <GoogleAnalyticsProvider /> inside <head> in app/layout.tsx
+ * This is a Server Component – scripts are injected at SSR time for instant detection.
  */
 export default function GoogleAnalyticsProvider() {
     const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
