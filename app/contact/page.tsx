@@ -684,7 +684,7 @@ export default function ContactPage() {
                     <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">{content.mapTitle}</h2>
                     <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700 h-[400px]">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3932.0!2d77.7!3d10.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00!2sOddanchatram!5e0!3m2!1sen!2sin!4v1"
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1004660.6497522809!2d77.1363475!3d10.3853373!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba9e3d7561436d9%3A0x6de6881dd6726af8!2sLOURDE'S%20GARDEN!5e0!3m2!1sen!2sin!4v1773354408978!5m2!1sen!2sin"
                             width="100%"
                             height="100%"
                             style={{ border: 0 }}
