@@ -38,6 +38,12 @@ backup-v1/
 test-results/
 *.xlsx
 *.csv
+*.pptx
+generate_pptx.py
+all_files.txt
+all_tracked_files.txt
+all_v1_files.txt
+files_in_commit.txt
 
 # vercel
 .vercel
