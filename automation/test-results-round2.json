@@ -1,0 +1,2279 @@
+﻿{
+  "config": {
+    "configFile": "D:\\Others\\lourdes-garden-enterprise\\automation\\playwright.config.ts",
+    "rootDir": "D:/Others/lourdes-garden-enterprise/automation/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "D:/Others/lourdes-garden-enterprise/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/Others/lourdes-garden-enterprise/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/Others/lourdes-garden-enterprise/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "D:/Others/lourdes-garden-enterprise/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/Others/lourdes-garden-enterprise/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "D:/Others/lourdes-garden-enterprise/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/Others/lourdes-garden-enterprise/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "mobile-chrome",
+        "name": "mobile-chrome",
+        "testDir": "D:/Others/lourdes-garden-enterprise/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/Others/lourdes-garden-enterprise/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "mobile-safari",
+        "name": "mobile-safari",
+        "testDir": "D:/Others/lourdes-garden-enterprise/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/Others/lourdes-garden-enterprise/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "tablet",
+        "name": "tablet",
+        "testDir": "D:/Others/lourdes-garden-enterprise/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.57.0",
+    "workers": 2,
+    "webServer": {
+      "command": "cd .. && npm run dev",
+      "url": "http://localhost:3000",
+      "reuseExistingServer": true,
+      "timeout": 120000
+    }
+  },
+  "suites": [
+    {
+      "title": "ui\\contact.spec.ts",
+      "file": "ui/contact.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Contact Form Functionality",
+          "file": "ui/contact.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-CONTACT-001: Submit Contact Form Successfully @high",
+              "ok": false,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 25838,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h3').filter({ hasText: 'Message Sent Successfully!' })\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h3').filter({ hasText: 'Message Sent Successfully!' })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h3').filter({ hasText: 'Message Sent Successfully!' })\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h3').filter({ hasText: 'Message Sent Successfully!' })\u001b[22m\n\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts:24:92",
+                        "location": {
+                          "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts",
+                          "column": 92,
+                          "line": 24
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 22 |\u001b[39m\n \u001b[90m 23 |\u001b[39m         \u001b[90m// Assert success message - target the specific <h3> element to avoid matching the toast notification\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 24 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'h3'\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[32m'Message Sent Successfully!'\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m15000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 25 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'text=Thank you for contacting us'\u001b[39m)\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 26 |\u001b[39m\n \u001b[90m 27 |\u001b[39m         \u001b[90m// Verify form is replaced by success message\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts",
+                            "column": 92,
+                            "line": 24
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h3').filter({ hasText: 'Message Sent Successfully!' })\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h3').filter({ hasText: 'Message Sent Successfully!' })\u001b[22m\n\n\n  22 |\n  23 |         // Assert success message - target the specific <h3> element to avoid matching the toast notification\n> 24 |         await expect(page.locator('h3').filter({ hasText: 'Message Sent Successfully!' })).toBeVisible({ timeout: 15000 });\n     |                                                                                            ^\n  25 |         await expect(page.locator('text=Thank you for contacting us').first()).toBeVisible();\n  26 |\n  27 |         // Verify form is replaced by success message\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts:24:92"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:11:42.942Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-contact-Contact-Form-Fu-56083-tact-Form-Successfully-high-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-contact-Contact-Form-Fu-56083-tact-Form-Successfully-high-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-contact-Contact-Form-Fu-56083-tact-Form-Successfully-high-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts",
+                        "column": 92,
+                        "line": 24
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "0f5f26e90458c7e4baec-2110f149136342a98dca",
+              "file": "ui/contact.spec.ts",
+              "line": 4,
+              "column": 9
+            },
+            {
+              "title": "TC-CONTACT-002: Form Validation @medium",
+              "ok": true,
+              "tags": [
+                "medium"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 12104,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:11:42.973Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0f5f26e90458c7e4baec-e9dd2c1fa16cd17adc50",
+              "file": "ui/contact.spec.ts",
+              "line": 36,
+              "column": 9
+            },
+            {
+              "title": "TC-CONTACT-001: Submit Contact Form Successfully @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 12486,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:12:26.710Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0f5f26e90458c7e4baec-3ab16daff73491d3f759",
+              "file": "ui/contact.spec.ts",
+              "line": 4,
+              "column": 9
+            },
+            {
+              "title": "TC-CONTACT-002: Form Validation @medium",
+              "ok": true,
+              "tags": [
+                "medium"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 5028,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:12:40.341Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0f5f26e90458c7e4baec-d67d45bc87759250f1f3",
+              "file": "ui/contact.spec.ts",
+              "line": 36,
+              "column": 9
+            },
+            {
+              "title": "TC-CONTACT-001: Submit Contact Form Successfully @high",
+              "ok": false,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 20263,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h3').filter({ hasText: 'Message Sent Successfully!' })\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h3').filter({ hasText: 'Message Sent Successfully!' })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h3').filter({ hasText: 'Message Sent Successfully!' })\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h3').filter({ hasText: 'Message Sent Successfully!' })\u001b[22m\n\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts:24:92",
+                        "location": {
+                          "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts",
+                          "column": 92,
+                          "line": 24
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 22 |\u001b[39m\n \u001b[90m 23 |\u001b[39m         \u001b[90m// Assert success message - target the specific <h3> element to avoid matching the toast notification\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 24 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'h3'\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[32m'Message Sent Successfully!'\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m15000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 25 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'text=Thank you for contacting us'\u001b[39m)\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 26 |\u001b[39m\n \u001b[90m 27 |\u001b[39m         \u001b[90m// Verify form is replaced by success message\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts",
+                            "column": 92,
+                            "line": 24
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h3').filter({ hasText: 'Message Sent Successfully!' })\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h3').filter({ hasText: 'Message Sent Successfully!' })\u001b[22m\n\n\n  22 |\n  23 |         // Assert success message - target the specific <h3> element to avoid matching the toast notification\n> 24 |         await expect(page.locator('h3').filter({ hasText: 'Message Sent Successfully!' })).toBeVisible({ timeout: 15000 });\n     |                                                                                            ^\n  25 |         await expect(page.locator('text=Thank you for contacting us').first()).toBeVisible();\n  26 |\n  27 |         // Verify form is replaced by success message\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts:24:92"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:13:19.640Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-contact-Contact-Form-Fu-56083-tact-Form-Successfully-high-webkit\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-contact-Contact-Form-Fu-56083-tact-Form-Successfully-high-webkit\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-contact-Contact-Form-Fu-56083-tact-Form-Successfully-high-webkit\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts",
+                        "column": 92,
+                        "line": 24
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "0f5f26e90458c7e4baec-717f0dc6510a005baf31",
+              "file": "ui/contact.spec.ts",
+              "line": 4,
+              "column": 9
+            },
+            {
+              "title": "TC-CONTACT-002: Form Validation @medium",
+              "ok": true,
+              "tags": [
+                "medium"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 4691,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:13:22.736Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0f5f26e90458c7e4baec-e19f93cac2eae97cc86c",
+              "file": "ui/contact.spec.ts",
+              "line": 36,
+              "column": 9
+            },
+            {
+              "title": "TC-CONTACT-001: Submit Contact Form Successfully @high",
+              "ok": false,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 24011,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h3').filter({ hasText: 'Message Sent Successfully!' })\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h3').filter({ hasText: 'Message Sent Successfully!' })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h3').filter({ hasText: 'Message Sent Successfully!' })\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h3').filter({ hasText: 'Message Sent Successfully!' })\u001b[22m\n\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts:24:92",
+                        "location": {
+                          "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts",
+                          "column": 92,
+                          "line": 24
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 22 |\u001b[39m\n \u001b[90m 23 |\u001b[39m         \u001b[90m// Assert success message - target the specific <h3> element to avoid matching the toast notification\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 24 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'h3'\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[32m'Message Sent Successfully!'\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m15000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 25 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'text=Thank you for contacting us'\u001b[39m)\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 26 |\u001b[39m\n \u001b[90m 27 |\u001b[39m         \u001b[90m// Verify form is replaced by success message\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts",
+                            "column": 92,
+                            "line": 24
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h3').filter({ hasText: 'Message Sent Successfully!' })\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h3').filter({ hasText: 'Message Sent Successfully!' })\u001b[22m\n\n\n  22 |\n  23 |         // Assert success message - target the specific <h3> element to avoid matching the toast notification\n> 24 |         await expect(page.locator('h3').filter({ hasText: 'Message Sent Successfully!' })).toBeVisible({ timeout: 15000 });\n     |                                                                                            ^\n  25 |         await expect(page.locator('text=Thank you for contacting us').first()).toBeVisible();\n  26 |\n  27 |         // Verify form is replaced by success message\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts:24:92"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:13:57.105Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-contact-Contact-Form-Fu-56083-tact-Form-Successfully-high-mobile-chrome\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-contact-Contact-Form-Fu-56083-tact-Form-Successfully-high-mobile-chrome\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-contact-Contact-Form-Fu-56083-tact-Form-Successfully-high-mobile-chrome\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts",
+                        "column": 92,
+                        "line": 24
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "0f5f26e90458c7e4baec-a2cef48bf4da37405ffa",
+              "file": "ui/contact.spec.ts",
+              "line": 4,
+              "column": 9
+            },
+            {
+              "title": "TC-CONTACT-002: Form Validation @medium",
+              "ok": true,
+              "tags": [
+                "medium"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 6665,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:13:59.181Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0f5f26e90458c7e4baec-25eaf4f22e0289aea769",
+              "file": "ui/contact.spec.ts",
+              "line": 36,
+              "column": 9
+            },
+            {
+              "title": "TC-CONTACT-001: Submit Contact Form Successfully @high",
+              "ok": false,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-safari",
+                  "projectName": "mobile-safari",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 19195,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h3').filter({ hasText: 'Message Sent Successfully!' })\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h3').filter({ hasText: 'Message Sent Successfully!' })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h3').filter({ hasText: 'Message Sent Successfully!' })\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h3').filter({ hasText: 'Message Sent Successfully!' })\u001b[22m\n\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts:24:92",
+                        "location": {
+                          "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts",
+                          "column": 92,
+                          "line": 24
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 22 |\u001b[39m\n \u001b[90m 23 |\u001b[39m         \u001b[90m// Assert success message - target the specific <h3> element to avoid matching the toast notification\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 24 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'h3'\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[32m'Message Sent Successfully!'\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m15000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 25 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'text=Thank you for contacting us'\u001b[39m)\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 26 |\u001b[39m\n \u001b[90m 27 |\u001b[39m         \u001b[90m// Verify form is replaced by success message\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts",
+                            "column": 92,
+                            "line": 24
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h3').filter({ hasText: 'Message Sent Successfully!' })\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h3').filter({ hasText: 'Message Sent Successfully!' })\u001b[22m\n\n\n  22 |\n  23 |         // Assert success message - target the specific <h3> element to avoid matching the toast notification\n> 24 |         await expect(page.locator('h3').filter({ hasText: 'Message Sent Successfully!' })).toBeVisible({ timeout: 15000 });\n     |                                                                                            ^\n  25 |         await expect(page.locator('text=Thank you for contacting us').first()).toBeVisible();\n  26 |\n  27 |         // Verify form is replaced by success message\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts:24:92"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:14:37.051Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-contact-Contact-Form-Fu-56083-tact-Form-Successfully-high-mobile-safari\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-contact-Contact-Form-Fu-56083-tact-Form-Successfully-high-mobile-safari\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-contact-Contact-Form-Fu-56083-tact-Form-Successfully-high-mobile-safari\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts",
+                        "column": 92,
+                        "line": 24
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "0f5f26e90458c7e4baec-d2af1df907ef9240654b",
+              "file": "ui/contact.spec.ts",
+              "line": 4,
+              "column": 9
+            },
+            {
+              "title": "TC-CONTACT-002: Form Validation @medium",
+              "ok": true,
+              "tags": [
+                "medium"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-safari",
+                  "projectName": "mobile-safari",
+                  "results": [
+                    {
+                      "workerIndex": 16,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3776,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:14:38.696Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0f5f26e90458c7e4baec-312a1f1fc22af25ace68",
+              "file": "ui/contact.spec.ts",
+              "line": 36,
+              "column": 9
+            },
+            {
+              "title": "TC-CONTACT-001: Submit Contact Form Successfully @high",
+              "ok": false,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet",
+                  "projectName": "tablet",
+                  "results": [
+                    {
+                      "workerIndex": 20,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 26469,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h3').filter({ hasText: 'Message Sent Successfully!' })\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h3').filter({ hasText: 'Message Sent Successfully!' })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h3').filter({ hasText: 'Message Sent Successfully!' })\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h3').filter({ hasText: 'Message Sent Successfully!' })\u001b[22m\n\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts:24:92",
+                        "location": {
+                          "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts",
+                          "column": 92,
+                          "line": 24
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 22 |\u001b[39m\n \u001b[90m 23 |\u001b[39m         \u001b[90m// Assert success message - target the specific <h3> element to avoid matching the toast notification\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 24 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'h3'\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[32m'Message Sent Successfully!'\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m15000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 25 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'text=Thank you for contacting us'\u001b[39m)\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 26 |\u001b[39m\n \u001b[90m 27 |\u001b[39m         \u001b[90m// Verify form is replaced by success message\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts",
+                            "column": 92,
+                            "line": 24
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h3').filter({ hasText: 'Message Sent Successfully!' })\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('h3').filter({ hasText: 'Message Sent Successfully!' })\u001b[22m\n\n\n  22 |\n  23 |         // Assert success message - target the specific <h3> element to avoid matching the toast notification\n> 24 |         await expect(page.locator('h3').filter({ hasText: 'Message Sent Successfully!' })).toBeVisible({ timeout: 15000 });\n     |                                                                                            ^\n  25 |         await expect(page.locator('text=Thank you for contacting us').first()).toBeVisible();\n  26 |\n  27 |         // Verify form is replaced by success message\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts:24:92"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:15:13.022Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-contact-Contact-Form-Fu-56083-tact-Form-Successfully-high-tablet\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-contact-Contact-Form-Fu-56083-tact-Form-Successfully-high-tablet\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-contact-Contact-Form-Fu-56083-tact-Form-Successfully-high-tablet\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts",
+                        "column": 92,
+                        "line": 24
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "0f5f26e90458c7e4baec-cec94dd5732f762fa5bd",
+              "file": "ui/contact.spec.ts",
+              "line": 4,
+              "column": 9
+            },
+            {
+              "title": "TC-CONTACT-002: Form Validation @medium",
+              "ok": true,
+              "tags": [
+                "medium"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet",
+                  "projectName": "tablet",
+                  "results": [
+                    {
+                      "workerIndex": 21,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 16252,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:15:13.082Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0f5f26e90458c7e4baec-f0a0faf990c09b205929",
+              "file": "ui/contact.spec.ts",
+              "line": 36,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ui\\site.spec.ts",
+      "file": "ui/site.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Full Site Verification",
+          "file": "ui/site.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-SITE-001: Navigation and Page Titles @high",
+              "ok": false,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 13930,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/, level: 1 })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/, level: 1 })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/, level: 1 })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/, level: 1 })\u001b[22m\n\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts:18:111",
+                        "location": {
+                          "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts",
+                          "column": 111,
+                          "line": 18
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 16 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'nav'\u001b[39m)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'link'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Products'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 17 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/\\/products/\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 18 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'heading'\u001b[39m\u001b[33m,\u001b[39m { level\u001b[33m:\u001b[39m \u001b[35m1\u001b[39m\u001b[33m,\u001b[39m name\u001b[33m:\u001b[39m \u001b[35m/Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 19 |\u001b[39m\n \u001b[90m 20 |\u001b[39m         \u001b[90m// Gallery\u001b[39m\n \u001b[90m 21 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'nav'\u001b[39m)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'link'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Gallery'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts",
+                            "column": 111,
+                            "line": 18
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/, level: 1 })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/, level: 1 })\u001b[22m\n\n\n  16 |         await page.locator('nav').getByRole('link', { name: 'Products' }).click();\n  17 |         await expect(page).toHaveURL(/\\/products/);\n> 18 |         await expect(page.getByRole('heading', { level: 1, name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/ })).toBeVisible();\n     |                                                                                                               ^\n  19 |\n  20 |         // Gallery\n  21 |         await page.locator('nav').getByRole('link', { name: 'Gallery' }).click();\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts:18:111"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:11:55.375Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-06c77-gation-and-Page-Titles-high-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-06c77-gation-and-Page-Titles-high-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-06c77-gation-and-Page-Titles-high-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts",
+                        "column": 111,
+                        "line": 18
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-0cb61755b9f50a7de653",
+              "file": "ui/site.spec.ts",
+              "line": 5,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-002: Language Switching @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9516,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:12:10.731Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-c74eeff8d6e4b1b1bcad",
+              "file": "ui/site.spec.ts",
+              "line": 31,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-003: Home Page Narrative Integrity (No Prices/Cart) @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 10966,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:12:10.967Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-0aa6d7f5080abbc911fb",
+              "file": "ui/site.spec.ts",
+              "line": 49,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-004: Responsive Mobile Menu @high",
+              "ok": false,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30828,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts",
+                            "column": 20,
+                            "line": 70
+                          },
+                          "message": "Error: page.waitForLoadState: Test timeout of 30000ms exceeded.\n\n  68 |\n  69 |         await page.goto('/');\n> 70 |         await page.waitForLoadState('networkidle');\n     |                    ^\n  71 |\n  72 |         // Open Mobile Menu\n  73 |         const menuBtn = page.locator('button >> svg.lucide-menu');\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts:70:20"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:12:20.569Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-4b942-Responsive-Mobile-Menu-high-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-4b942-Responsive-Mobile-Menu-high-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-4b942-Responsive-Mobile-Menu-high-chromium\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-97f70acd6c33c3bb7553",
+              "file": "ui/site.spec.ts",
+              "line": 65,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-005: Custom Botanical Cursor @medium",
+              "ok": true,
+              "tags": [
+                "medium"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 2484,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:12:22.616Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-e8eefd294142c76e989f",
+              "file": "ui/site.spec.ts",
+              "line": 90,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-001: Navigation and Page Titles @high",
+              "ok": false,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 12917,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/, level: 1 })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/, level: 1 })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/, level: 1 })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/, level: 1 })\u001b[22m\n\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts:18:111",
+                        "location": {
+                          "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts",
+                          "column": 111,
+                          "line": 18
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 16 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'nav'\u001b[39m)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'link'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Products'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 17 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/\\/products/\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 18 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'heading'\u001b[39m\u001b[33m,\u001b[39m { level\u001b[33m:\u001b[39m \u001b[35m1\u001b[39m\u001b[33m,\u001b[39m name\u001b[33m:\u001b[39m \u001b[35m/Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 19 |\u001b[39m\n \u001b[90m 20 |\u001b[39m         \u001b[90m// Gallery\u001b[39m\n \u001b[90m 21 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'nav'\u001b[39m)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'link'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Gallery'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts",
+                            "column": 111,
+                            "line": 18
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/, level: 1 })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/, level: 1 })\u001b[22m\n\n\n  16 |         await page.locator('nav').getByRole('link', { name: 'Products' }).click();\n  17 |         await expect(page).toHaveURL(/\\/products/);\n> 18 |         await expect(page.getByRole('heading', { level: 1, name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/ })).toBeVisible();\n     |                                                                                                               ^\n  19 |\n  20 |         // Gallery\n  21 |         await page.locator('nav').getByRole('link', { name: 'Gallery' }).click();\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts:18:111"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:12:45.410Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-06c77-gation-and-Page-Titles-high-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-06c77-gation-and-Page-Titles-high-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-06c77-gation-and-Page-Titles-high-firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts",
+                        "column": 111,
+                        "line": 18
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-17e4e5381a5875b1a2b4",
+              "file": "ui/site.spec.ts",
+              "line": 5,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-002: Language Switching @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7508,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:12:55.024Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-f172f3192aca12bdbeab",
+              "file": "ui/site.spec.ts",
+              "line": 31,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-003: Home Page Narrative Integrity (No Prices/Cart) @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5119,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:13:03.463Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-c2989a5b05918b3ed46a",
+              "file": "ui/site.spec.ts",
+              "line": 49,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-004: Responsive Mobile Menu @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 7387,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:13:09.289Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-6cfbd535884a303276b7",
+              "file": "ui/site.spec.ts",
+              "line": 65,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-005: Custom Botanical Cursor @medium",
+              "ok": true,
+              "tags": [
+                "medium"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3662,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:13:08.611Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-1e38528202064ac23714",
+              "file": "ui/site.spec.ts",
+              "line": 90,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-001: Navigation and Page Titles @high",
+              "ok": false,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 13302,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/, level: 1 })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/, level: 1 })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/, level: 1 })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/, level: 1 })\u001b[22m\n\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts:18:111",
+                        "location": {
+                          "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts",
+                          "column": 111,
+                          "line": 18
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 16 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'nav'\u001b[39m)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'link'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Products'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 17 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/\\/products/\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 18 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'heading'\u001b[39m\u001b[33m,\u001b[39m { level\u001b[33m:\u001b[39m \u001b[35m1\u001b[39m\u001b[33m,\u001b[39m name\u001b[33m:\u001b[39m \u001b[35m/Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 19 |\u001b[39m\n \u001b[90m 20 |\u001b[39m         \u001b[90m// Gallery\u001b[39m\n \u001b[90m 21 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'nav'\u001b[39m)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'link'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Gallery'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts",
+                            "column": 111,
+                            "line": 18
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/, level: 1 })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/, level: 1 })\u001b[22m\n\n\n  16 |         await page.locator('nav').getByRole('link', { name: 'Products' }).click();\n  17 |         await expect(page).toHaveURL(/\\/products/);\n> 18 |         await expect(page.getByRole('heading', { level: 1, name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/ })).toBeVisible();\n     |                                                                                                               ^\n  19 |\n  20 |         // Gallery\n  21 |         await page.locator('nav').getByRole('link', { name: 'Gallery' }).click();\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts:18:111"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:13:27.721Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-06c77-gation-and-Page-Titles-high-webkit\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-06c77-gation-and-Page-Titles-high-webkit\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-06c77-gation-and-Page-Titles-high-webkit\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts",
+                        "column": 111,
+                        "line": 18
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-4be9a2a8d77da89c9a28",
+              "file": "ui/site.spec.ts",
+              "line": 5,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-002: Language Switching @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6717,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:13:41.816Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-9d154d35cbb582a1449f",
+              "file": "ui/site.spec.ts",
+              "line": 31,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-003: Home Page Narrative Integrity (No Prices/Cart) @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 7441,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:13:43.489Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-86566a6ec018d85d64bf",
+              "file": "ui/site.spec.ts",
+              "line": 49,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-004: Responsive Mobile Menu @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5352,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:13:48.660Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-541eb2ca08139e8e6b25",
+              "file": "ui/site.spec.ts",
+              "line": 65,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-005: Custom Botanical Cursor @medium",
+              "ok": true,
+              "tags": [
+                "medium"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 4184,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:13:51.075Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-480ee81a039da7012ee6",
+              "file": "ui/site.spec.ts",
+              "line": 90,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-001: Navigation and Page Titles @high",
+              "ok": false,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 14881,
+                      "error": {
+                        "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('nav').getByRole('link', { name: 'Our Story' })\u001b[22m\n",
+                        "stack": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('nav').getByRole('link', { name: 'Our Story' })\u001b[22m\n\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts:11:76",
+                        "location": {
+                          "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts",
+                          "column": 76,
+                          "line": 11
+                        },
+                        "snippet": "\u001b[0m \u001b[90m  9 |\u001b[39m\n \u001b[90m 10 |\u001b[39m         \u001b[90m// About ΓÇö heading is h1, not h2\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 11 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'nav'\u001b[39m)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'link'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Our Story'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 12 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/\\/about/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 13 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'heading'\u001b[39m\u001b[33m,\u001b[39m { level\u001b[33m:\u001b[39m \u001b[35m1\u001b[39m\u001b[33m,\u001b[39m name\u001b[33m:\u001b[39m \u001b[35m/Our Story|α«Äα«Öα»ìα«òα«│α»ì α«òα«ñα»ê/\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 14 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts",
+                            "column": 76,
+                            "line": 11
+                          },
+                          "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('nav').getByRole('link', { name: 'Our Story' })\u001b[22m\n\n\n   9 |\n  10 |         // About ΓÇö heading is h1, not h2\n> 11 |         await page.locator('nav').getByRole('link', { name: 'Our Story' }).click();\n     |                                                                            ^\n  12 |         await expect(page).toHaveURL(/\\/about/);\n  13 |         await expect(page.getByRole('heading', { level: 1, name: /Our Story|α«Äα«Öα»ìα«òα«│α»ì α«òα«ñα»ê/ })).toBeVisible();\n  14 |\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts:11:76"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:14:06.628Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-06c77-gation-and-Page-Titles-high-mobile-chrome\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-06c77-gation-and-Page-Titles-high-mobile-chrome\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-06c77-gation-and-Page-Titles-high-mobile-chrome\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts",
+                        "column": 76,
+                        "line": 11
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-e9e6778e38d2fb82ed35",
+              "file": "ui/site.spec.ts",
+              "line": 5,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-002: Language Switching @high",
+              "ok": false,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 13100,
+                      "error": {
+                        "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[aria-label=\"Toggle language\"]').first()\u001b[22m\n\u001b[2m    - locator resolved to <button aria-label=\"Toggle language\" class=\"flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-green-50 dark:hover:bg-green-900/30 text-gray-700 dark:text-gray-300 transition-all border border-transparent hover:border-green-200 dark:hover:border-green-800\">ΓÇª</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 ├ù waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 ├ù waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    18 ├ù waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+                        "stack": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[aria-label=\"Toggle language\"]').first()\u001b[22m\n\u001b[2m    - locator resolved to <button aria-label=\"Toggle language\" class=\"flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-green-50 dark:hover:bg-green-900/30 text-gray-700 dark:text-gray-300 transition-all border border-transparent hover:border-green-200 dark:hover:border-green-800\">ΓÇª</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 ├ù waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 ├ù waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    18 ├ù waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts:39:26",
+                        "location": {
+                          "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts",
+                          "column": 26,
+                          "line": 39
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 37 |\u001b[39m         \u001b[90m// Switch to Tamil using aria-label (button text is ENGLISH/α«ñα««α«┐α«┤α»ì, not EN/TA)\u001b[39m\n \u001b[90m 38 |\u001b[39m         \u001b[36mconst\u001b[39m langToggle \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button[aria-label=\"Toggle language\"]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 39 |\u001b[39m         \u001b[36mawait\u001b[39m langToggle\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 40 |\u001b[39m\n \u001b[90m 41 |\u001b[39m         \u001b[90m// Check Tamil content ΓÇö use .first() to avoid strict mode (header h1 may match multiple times)\u001b[39m\n \u001b[90m 42 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'heading'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'α«▓α»éα«░α»ìα«ñα»ü α«òα«╛α«░α»ìα«ƒα«⌐α»ì'\u001b[39m })\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts",
+                            "column": 26,
+                            "line": 39
+                          },
+                          "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[aria-label=\"Toggle language\"]').first()\u001b[22m\n\u001b[2m    - locator resolved to <button aria-label=\"Toggle language\" class=\"flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-green-50 dark:hover:bg-green-900/30 text-gray-700 dark:text-gray-300 transition-all border border-transparent hover:border-green-200 dark:hover:border-green-800\">ΓÇª</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 ├ù waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 ├ù waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    18 ├ù waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n\n  37 |         // Switch to Tamil using aria-label (button text is ENGLISH/α«ñα««α«┐α«┤α»ì, not EN/TA)\n  38 |         const langToggle = page.locator('button[aria-label=\"Toggle language\"]').first();\n> 39 |         await langToggle.click();\n     |                          ^\n  40 |\n  41 |         // Check Tamil content ΓÇö use .first() to avoid strict mode (header h1 may match multiple times)\n  42 |         await expect(page.getByRole('heading', { name: 'α«▓α»éα«░α»ìα«ñα»ü α«òα«╛α«░α»ìα«ƒα«⌐α»ì' }).first()).toBeVisible();\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts:39:26"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:14:23.304Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-b8fa9-002-Language-Switching-high-mobile-chrome\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-b8fa9-002-Language-Switching-high-mobile-chrome\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-b8fa9-002-Language-Switching-high-mobile-chrome\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts",
+                        "column": 26,
+                        "line": 39
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-51c47ce6f38a9e056151",
+              "file": "ui/site.spec.ts",
+              "line": 31,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-003: Home Page Narrative Integrity (No Prices/Cart) @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5487,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:14:23.340Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-1935ceac4dddd92f7058",
+              "file": "ui/site.spec.ts",
+              "line": 49,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-004: Responsive Mobile Menu @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5708,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:14:29.193Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-914d21bd10a7d541d23f",
+              "file": "ui/site.spec.ts",
+              "line": 65,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-005: Custom Botanical Cursor @medium",
+              "ok": true,
+              "tags": [
+                "medium"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 369,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:14:34.927Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-d0742e398008e0a2052b",
+              "file": "ui/site.spec.ts",
+              "line": 90,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-001: Navigation and Page Titles @high",
+              "ok": false,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-safari",
+                  "projectName": "mobile-safari",
+                  "results": [
+                    {
+                      "workerIndex": 16,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 12284,
+                      "error": {
+                        "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('nav').getByRole('link', { name: 'Our Story' })\u001b[22m\n",
+                        "stack": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('nav').getByRole('link', { name: 'Our Story' })\u001b[22m\n\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts:11:76",
+                        "location": {
+                          "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts",
+                          "column": 76,
+                          "line": 11
+                        },
+                        "snippet": "\u001b[0m \u001b[90m  9 |\u001b[39m\n \u001b[90m 10 |\u001b[39m         \u001b[90m// About ΓÇö heading is h1, not h2\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 11 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'nav'\u001b[39m)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'link'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Our Story'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 12 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/\\/about/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 13 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'heading'\u001b[39m\u001b[33m,\u001b[39m { level\u001b[33m:\u001b[39m \u001b[35m1\u001b[39m\u001b[33m,\u001b[39m name\u001b[33m:\u001b[39m \u001b[35m/Our Story|α«Äα«Öα»ìα«òα«│α»ì α«òα«ñα»ê/\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 14 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts",
+                            "column": 76,
+                            "line": 11
+                          },
+                          "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('nav').getByRole('link', { name: 'Our Story' })\u001b[22m\n\n\n   9 |\n  10 |         // About ΓÇö heading is h1, not h2\n> 11 |         await page.locator('nav').getByRole('link', { name: 'Our Story' }).click();\n     |                                                                            ^\n  12 |         await expect(page).toHaveURL(/\\/about/);\n  13 |         await expect(page.getByRole('heading', { level: 1, name: /Our Story|α«Äα«Öα»ìα«òα«│α»ì α«òα«ñα»ê/ })).toBeVisible();\n  14 |\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts:11:76"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:14:42.652Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-06c77-gation-and-Page-Titles-high-mobile-safari\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-06c77-gation-and-Page-Titles-high-mobile-safari\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-06c77-gation-and-Page-Titles-high-mobile-safari\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts",
+                        "column": 76,
+                        "line": 11
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-0cb27fbcb0b6ab5217f7",
+              "file": "ui/site.spec.ts",
+              "line": 5,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-002: Language Switching @high",
+              "ok": false,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-safari",
+                  "projectName": "mobile-safari",
+                  "results": [
+                    {
+                      "workerIndex": 17,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 12168,
+                      "error": {
+                        "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[aria-label=\"Toggle language\"]').first()\u001b[22m\n\u001b[2m    - locator resolved to <button aria-label=\"Toggle language\" class=\"flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-green-50 dark:hover:bg-green-900/30 text-gray-700 dark:text-gray-300 transition-all border border-transparent hover:border-green-200 dark:hover:border-green-800\">ΓÇª</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 ├ù waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 ├ù waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    8 ├ù waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n",
+                        "stack": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[aria-label=\"Toggle language\"]').first()\u001b[22m\n\u001b[2m    - locator resolved to <button aria-label=\"Toggle language\" class=\"flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-green-50 dark:hover:bg-green-900/30 text-gray-700 dark:text-gray-300 transition-all border border-transparent hover:border-green-200 dark:hover:border-green-800\">ΓÇª</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 ├ù waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 ├ù waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    8 ├ù waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts:39:26",
+                        "location": {
+                          "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts",
+                          "column": 26,
+                          "line": 39
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 37 |\u001b[39m         \u001b[90m// Switch to Tamil using aria-label (button text is ENGLISH/α«ñα««α«┐α«┤α»ì, not EN/TA)\u001b[39m\n \u001b[90m 38 |\u001b[39m         \u001b[36mconst\u001b[39m langToggle \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button[aria-label=\"Toggle language\"]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 39 |\u001b[39m         \u001b[36mawait\u001b[39m langToggle\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 40 |\u001b[39m\n \u001b[90m 41 |\u001b[39m         \u001b[90m// Check Tamil content ΓÇö use .first() to avoid strict mode (header h1 may match multiple times)\u001b[39m\n \u001b[90m 42 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'heading'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'α«▓α»éα«░α»ìα«ñα»ü α«òα«╛α«░α»ìα«ƒα«⌐α»ì'\u001b[39m })\u001b[33m.\u001b[39mfirst())\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts",
+                            "column": 26,
+                            "line": 39
+                          },
+                          "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[aria-label=\"Toggle language\"]').first()\u001b[22m\n\u001b[2m    - locator resolved to <button aria-label=\"Toggle language\" class=\"flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-green-50 dark:hover:bg-green-900/30 text-gray-700 dark:text-gray-300 transition-all border border-transparent hover:border-green-200 dark:hover:border-green-800\">ΓÇª</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 ├ù waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 ├ù waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    8 ├ù waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\n\n  37 |         // Switch to Tamil using aria-label (button text is ENGLISH/α«ñα««α«┐α«┤α»ì, not EN/TA)\n  38 |         const langToggle = page.locator('button[aria-label=\"Toggle language\"]').first();\n> 39 |         await langToggle.click();\n     |                          ^\n  40 |\n  41 |         // Check Tamil content ΓÇö use .first() to avoid strict mode (header h1 may match multiple times)\n  42 |         await expect(page.getByRole('heading', { name: 'α«▓α»éα«░α»ìα«ñα»ü α«òα«╛α«░α»ìα«ƒα«⌐α»ì' }).first()).toBeVisible();\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts:39:26"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:14:56.691Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-b8fa9-002-Language-Switching-high-mobile-safari\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-b8fa9-002-Language-Switching-high-mobile-safari\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-b8fa9-002-Language-Switching-high-mobile-safari\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts",
+                        "column": 26,
+                        "line": 39
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-eebf3b81c6ba3a49b984",
+              "file": "ui/site.spec.ts",
+              "line": 31,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-003: Home Page Narrative Integrity (No Prices/Cart) @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-safari",
+                  "projectName": "mobile-safari",
+                  "results": [
+                    {
+                      "workerIndex": 18,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5948,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:14:58.590Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-61b3bc5bfc71b9831f2c",
+              "file": "ui/site.spec.ts",
+              "line": 49,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-004: Responsive Mobile Menu @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-safari",
+                  "projectName": "mobile-safari",
+                  "results": [
+                    {
+                      "workerIndex": 18,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6684,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:15:04.776Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-8ffe7b3011b7421cfec0",
+              "file": "ui/site.spec.ts",
+              "line": 65,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-005: Custom Botanical Cursor @medium",
+              "ok": true,
+              "tags": [
+                "medium"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-safari",
+                  "projectName": "mobile-safari",
+                  "results": [
+                    {
+                      "workerIndex": 19,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 611,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:15:10.926Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-fce72d350eeafc4691b9",
+              "file": "ui/site.spec.ts",
+              "line": 90,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-001: Navigation and Page Titles @high",
+              "ok": false,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet",
+                  "projectName": "tablet",
+                  "results": [
+                    {
+                      "workerIndex": 21,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 12769,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/, level: 1 })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/, level: 1 })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/, level: 1 })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/, level: 1 })\u001b[22m\n\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts:18:111",
+                        "location": {
+                          "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts",
+                          "column": 111,
+                          "line": 18
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 16 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'nav'\u001b[39m)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'link'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Products'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 17 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/\\/products/\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 18 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'heading'\u001b[39m\u001b[33m,\u001b[39m { level\u001b[33m:\u001b[39m \u001b[35m1\u001b[39m\u001b[33m,\u001b[39m name\u001b[33m:\u001b[39m \u001b[35m/Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 19 |\u001b[39m\n \u001b[90m 20 |\u001b[39m         \u001b[90m// Gallery\u001b[39m\n \u001b[90m 21 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'nav'\u001b[39m)\u001b[33m.\u001b[39mgetByRole(\u001b[32m'link'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Gallery'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts",
+                            "column": 111,
+                            "line": 18
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/, level: 1 })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/, level: 1 })\u001b[22m\n\n\n  16 |         await page.locator('nav').getByRole('link', { name: 'Products' }).click();\n  17 |         await expect(page).toHaveURL(/\\/products/);\n> 18 |         await expect(page.getByRole('heading', { level: 1, name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒α»üα«╡α«ƒα»ê/ })).toBeVisible();\n     |                                                                                                               ^\n  19 |\n  20 |         // Gallery\n  21 |         await page.locator('nav').getByRole('link', { name: 'Gallery' }).click();\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts:18:111"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:15:29.639Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-06c77-gation-and-Page-Titles-high-tablet\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-06c77-gation-and-Page-Titles-high-tablet\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-06c77-gation-and-Page-Titles-high-tablet\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts",
+                        "column": 111,
+                        "line": 18
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-a4b8216cc16b869e1296",
+              "file": "ui/site.spec.ts",
+              "line": 5,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-002: Language Switching @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet",
+                  "projectName": "tablet",
+                  "results": [
+                    {
+                      "workerIndex": 22,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2756,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:15:42.864Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-11870713924ba1b92705",
+              "file": "ui/site.spec.ts",
+              "line": 31,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-003: Home Page Narrative Integrity (No Prices/Cart) @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet",
+                  "projectName": "tablet",
+                  "results": [
+                    {
+                      "workerIndex": 23,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3854,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:15:45.762Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-1675f901b79aec9a0f57",
+              "file": "ui/site.spec.ts",
+              "line": 49,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-004: Responsive Mobile Menu @high",
+              "ok": false,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet",
+                  "projectName": "tablet",
+                  "results": [
+                    {
+                      "workerIndex": 22,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30303,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts",
+                            "column": 20,
+                            "line": 70
+                          },
+                          "message": "Error: page.waitForLoadState: Test timeout of 30000ms exceeded.\n\n  68 |\n  69 |         await page.goto('/');\n> 70 |         await page.waitForLoadState('networkidle');\n     |                    ^\n  71 |\n  72 |         // Open Mobile Menu\n  73 |         const menuBtn = page.locator('button >> svg.lucide-menu');\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts:70:20"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:15:45.807Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-4b942-Responsive-Mobile-Menu-high-tablet\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-4b942-Responsive-Mobile-Menu-high-tablet\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-4b942-Responsive-Mobile-Menu-high-tablet\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-a26eb9eca1327e59a0bd",
+              "file": "ui/site.spec.ts",
+              "line": 65,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-005: Custom Botanical Cursor @medium",
+              "ok": true,
+              "tags": [
+                "medium"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet",
+                  "projectName": "tablet",
+                  "results": [
+                    {
+                      "workerIndex": 23,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1874,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:15:49.882Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-54bb6dec6161da55c221",
+              "file": "ui/site.spec.ts",
+              "line": 90,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-02-18T08:11:41.204Z",
+    "duration": 275097.654,
+    "expected": 27,
+    "skipped": 0,
+    "unexpected": 15,
+    "flaky": 0
+  }
+}

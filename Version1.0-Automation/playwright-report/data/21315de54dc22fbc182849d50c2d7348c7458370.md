@@ -1,0 +1,112 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - link "Lourdes Garden Premium Organic Products" [ref=e7] [cursor=pointer]:
+            - /url: /
+            - img [ref=e8]
+            - generic [ref=e11]:
+              - heading "Lourdes Garden" [level=1] [ref=e12]
+              - paragraph [ref=e13]: Premium Organic Products
+          - navigation [ref=e14]:
+            - link "Our Story" [ref=e15] [cursor=pointer]:
+              - /url: /about
+            - link "Products" [ref=e16] [cursor=pointer]:
+              - /url: /products
+            - link "Gallery" [ref=e17] [cursor=pointer]:
+              - /url: /gallery
+            - link "Contact" [ref=e18] [cursor=pointer]:
+              - /url: /contact
+        - generic [ref=e19]:
+          - button "Toggle language" [ref=e20]:
+            - img [ref=e21]
+            - generic [ref=e25]: ENGLISH
+          - button "Toggle theme" [ref=e26]:
+            - img [ref=e27]
+    - generic [ref=e33]:
+      - img "Lourdes Garden Farm" [ref=e34]
+      - generic [ref=e36]:
+        - heading "🌿 Lourdes Garden" [level=2] [ref=e37]
+        - paragraph [ref=e38]: From Our Farm to the World
+        - paragraph [ref=e39]: Premium organic agricultural products grown naturally in the misty mountains of Tamil Nadu.
+        - generic [ref=e40]:
+          - link "Shop Collection" [ref=e41] [cursor=pointer]:
+            - /url: /products
+            - text: Shop Collection
+            - img [ref=e42]
+          - link "Our Story" [ref=e44] [cursor=pointer]:
+            - /url: /about
+    - generic [ref=e46]:
+      - generic [ref=e47]:
+        - img [ref=e49]
+        - heading "100% Organic" [level=3] [ref=e52]
+        - paragraph [ref=e53]: Grown without chemical pesticides or fertilizers. Pure, natural, and healthy products direct from our soil.
+      - generic [ref=e54]:
+        - img [ref=e56]
+        - heading "Export Quality" [level=3] [ref=e59]
+        - paragraph [ref=e60]: Premium grade products certified for international export markets, meeting global standards of excellence.
+      - generic [ref=e61]:
+        - img [ref=e63]
+        - heading "B2B & Wholesale" [level=3] [ref=e68]
+        - paragraph [ref=e69]: Serving businesses worldwide with bulk orders and competitive wholesale pricing for global distribution.
+    - heading "Featured Harvest" [level=2] [ref=e73]
+    - contentinfo [ref=e75]:
+      - generic [ref=e76]:
+        - generic [ref=e77]:
+          - generic [ref=e78]:
+            - generic [ref=e79]:
+              - img [ref=e80]
+              - generic [ref=e83]: Lourdes Garden
+            - paragraph [ref=e84]: Premium organic agricultural products from the mountains of Tamil Nadu. Dedicated to sustainable farming and global excellence.
+            - generic [ref=e85]:
+              - link [ref=e86] [cursor=pointer]:
+                - /url: https://wa.me/917373348242
+                - img [ref=e87]
+              - link [ref=e89] [cursor=pointer]:
+                - /url: mailto:lourdesgarden.odc@gmail.com
+                - img [ref=e90]
+          - generic [ref=e93]:
+            - heading "Quick Links" [level=4] [ref=e94]
+            - list [ref=e95]:
+              - listitem [ref=e96]:
+                - link "Home" [ref=e97] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=e98]:
+                - link "Our Story" [ref=e99] [cursor=pointer]:
+                  - /url: /about
+              - listitem [ref=e100]:
+                - link "Products" [ref=e101] [cursor=pointer]:
+                  - /url: /products
+              - listitem [ref=e102]:
+                - link "Gallery" [ref=e103] [cursor=pointer]:
+                  - /url: /gallery
+              - listitem [ref=e104]:
+                - link "Contact" [ref=e105] [cursor=pointer]:
+                  - /url: /contact
+          - generic [ref=e106]:
+            - heading "Get in Touch" [level=4] [ref=e107]
+            - list [ref=e108]:
+              - listitem [ref=e109]:
+                - img [ref=e110]
+                - generic [ref=e113]: Oddanchatram, Tamil Nadu, India
+              - listitem [ref=e114]:
+                - img [ref=e115]
+                - link "lourdesgarden.odc@gmail.com" [ref=e118] [cursor=pointer]:
+                  - /url: mailto:lourdesgarden.odc@gmail.com
+              - listitem [ref=e119]:
+                - img [ref=e120]
+                - link "+91 73733 48242" [ref=e122] [cursor=pointer]:
+                  - /url: tel:+917373348242
+        - generic [ref=e123]:
+          - paragraph [ref=e124]: © 2026 Lourdes Garden. All rights reserved.
+          - generic [ref=e125]:
+            - link "Privacy Policy" [ref=e126] [cursor=pointer]:
+              - /url: /contact
+            - link "Terms of Service" [ref=e127] [cursor=pointer]:
+              - /url: /contact
+  - alert [ref=e128]
+```

@@ -1,0 +1,77 @@
+[
+  {
+    "test": "TC-CONTACT-001: Submit Contact",
+    "proj": "chromium",
+    "err": "Error: expect(locator).toBeVisible() failed // Locator: locator('h3').filter({ hasText: 'Message Sent Successfully!' }) // Expected: visible"
+  },
+  {
+    "test": "TC-CONTACT-001: Submit Contact",
+    "proj": "webkit",
+    "err": "Error: expect(locator).toBeVisible() failed // Locator: locator('h3').filter({ hasText: 'Message Sent Successfully!' }) // Expected: visible"
+  },
+  {
+    "test": "TC-CONTACT-001: Submit Contact",
+    "proj": "mobile-chrome",
+    "err": "Error: expect(locator).toBeVisible() failed // Locator: locator('h3').filter({ hasText: 'Message Sent Successfully!' }) // Expected: visible"
+  },
+  {
+    "test": "TC-CONTACT-001: Submit Contact",
+    "proj": "mobile-safari",
+    "err": "Error: expect(locator).toBeVisible() failed // Locator: locator('h3').filter({ hasText: 'Message Sent Successfully!' }) // Expected: visible"
+  },
+  {
+    "test": "TC-CONTACT-001: Submit Contact",
+    "proj": "tablet",
+    "err": "Error: expect(locator).toBeVisible() failed // Locator: locator('h3').filter({ hasText: 'Message Sent Successfully!' }) // Expected: visible"
+  },
+  {
+    "test": "TC-SITE-001: Navigation and Pa",
+    "proj": "chromium",
+    "err": "Error: expect(locator).toBeVisible() failed // Locator: getByRole('heading', { name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒"
+  },
+  {
+    "test": "TC-SITE-004: Responsive Mobile",
+    "proj": "chromium",
+    "err": "Test timeout of 30000ms exceeded."
+  },
+  {
+    "test": "TC-SITE-001: Navigation and Pa",
+    "proj": "firefox",
+    "err": "Error: expect(locator).toBeVisible() failed // Locator: getByRole('heading', { name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒"
+  },
+  {
+    "test": "TC-SITE-001: Navigation and Pa",
+    "proj": "webkit",
+    "err": "Error: expect(locator).toBeVisible() failed // Locator: getByRole('heading', { name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒"
+  },
+  {
+    "test": "TC-SITE-001: Navigation and Pa",
+    "proj": "mobile-chrome",
+    "err": "TimeoutError: locator.click: Timeout 10000ms exceeded. // Call log: //   - waiting for locator('nav').getByRole('link', { name: 'Our Story' })"
+  },
+  {
+    "test": "TC-SITE-002: Language Switchin",
+    "proj": "mobile-chrome",
+    "err": "TimeoutError: locator.click: Timeout 10000ms exceeded. // Call log: //   - waiting for locator('button[aria-label=\"Toggle language\"]').first()"
+  },
+  {
+    "test": "TC-SITE-001: Navigation and Pa",
+    "proj": "mobile-safari",
+    "err": "TimeoutError: locator.click: Timeout 10000ms exceeded. // Call log: //   - waiting for locator('nav').getByRole('link', { name: 'Our Story' })"
+  },
+  {
+    "test": "TC-SITE-002: Language Switchin",
+    "proj": "mobile-safari",
+    "err": "TimeoutError: locator.click: Timeout 10000ms exceeded. // Call log: //   - waiting for locator('button[aria-label=\"Toggle language\"]').first()"
+  },
+  {
+    "test": "TC-SITE-001: Navigation and Pa",
+    "proj": "tablet",
+    "err": "Error: expect(locator).toBeVisible() failed // Locator: getByRole('heading', { name: /Heritage Harvest|α«¿α««α«ñα»ü α«¬α«╛α«░α««α»ìα«¬α«░α«┐α«» α«àα«▒"
+  },
+  {
+    "test": "TC-SITE-004: Responsive Mobile",
+    "proj": "tablet",
+    "err": "Test timeout of 30000ms exceeded."
+  }
+]

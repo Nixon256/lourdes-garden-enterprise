@@ -1,0 +1,22 @@
+{
+    "name": "Lourdes Garden",
+    "short_name": "LourdesGarden",
+    "description": "Premium Global Agricultural Heritage - From Our Farm to the World",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#052e16",
+    "theme_color": "#16a34a",
+    "icons": [
+        {
+            "src": "/images/hero.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/images/hero.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

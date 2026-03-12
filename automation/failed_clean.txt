@@ -1,0 +1,180 @@
+﻿---
+TEST: TC-CONTACT-001: Submit Contact Form Successfully @high
+BROWSER: chromium
+ERROR:
+Error: expect(locator).toBeVisible() failed
+
+Locator: locator('text=Message Sent Successfully!')
+Expected: visible
+Error: strict mode violation: locator('text=Message Sent Successfully!') resolved to 2 elements:
+---
+TEST: TC-CONTACT-001: Submit Contact Form Successfully @high
+BROWSER: firefox
+ERROR:
+Error: expect(locator).toBeVisible() failed
+
+Locator: locator('text=Message Sent Successfully!')
+Expected: visible
+Error: strict mode violation: locator('text=Message Sent Successfully!') resolved to 2 elements:
+---
+TEST: TC-CONTACT-001: Submit Contact Form Successfully @high
+BROWSER: webkit
+ERROR:
+Error: expect(locator).toBeVisible() failed
+
+Locator: locator('text=Message Sent Successfully!')
+Expected: visible
+Timeout: 10000ms
+---
+TEST: TC-CONTACT-001: Submit Contact Form Successfully @high
+BROWSER: mobile-chrome
+ERROR:
+Error: expect(locator).toBeVisible() failed
+
+Locator: locator('text=Message Sent Successfully!')
+Expected: visible
+Error: strict mode violation: locator('text=Message Sent Successfully!') resolved to 2 elements:
+---
+TEST: TC-CONTACT-001: Submit Contact Form Successfully @high
+BROWSER: mobile-safari
+ERROR:
+Error: expect(locator).toBeVisible() failed
+
+Locator: locator('text=Message Sent Successfully!')
+Expected: visible
+Timeout: 10000ms
+---
+TEST: TC-CONTACT-001: Submit Contact Form Successfully @high
+BROWSER: tablet
+ERROR:
+Error: expect(locator).toBeVisible() failed
+
+Locator: locator('text=Message Sent Successfully!')
+Expected: visible
+Error: strict mode violation: locator('text=Message Sent Successfully!') resolved to 2 elements:
+---
+TEST: TC-SITE-001: Navigation and Page Titles @high
+BROWSER: chromium
+ERROR:
+Error: expect(locator).toBeVisible() failed
+
+Locator: getByRole('heading', { name: /Our Story|α«Äα«Öα»ìα«òα«│α»ì α«òα«ñα»ê/, level: 2 })
+Expected: visible
+Timeout: 5000ms
+---
+TEST: TC-SITE-002: Language Switching @high
+BROWSER: chromium
+ERROR:
+Error: expect(locator).toBeVisible() failed
+
+Locator: getByRole('heading', { name: 'α«▓α»éα«░α»ìα«ñα»ü α«òα«╛α«░α»ìα«ƒα«⌐α»ì' })
+Expected: visible
+Error: strict mode violation: getByRole('heading', { name: 'α«▓α»éα«░α»ìα«ñα»ü α«òα«╛α«░α»ìα«ƒα«⌐α»ì' }) resolved to 2 elements:
+---
+TEST: TC-SITE-001: Navigation and Page Titles @high
+BROWSER: firefox
+ERROR:
+Error: expect(locator).toBeVisible() failed
+
+Locator: getByRole('heading', { name: /Our Story|α«Äα«Öα»ìα«òα«│α»ì α«òα«ñα»ê/, level: 2 })
+Expected: visible
+Timeout: 5000ms
+---
+TEST: TC-SITE-002: Language Switching @high
+BROWSER: firefox
+ERROR:
+Error: expect(locator).toBeVisible() failed
+
+Locator: getByRole('heading', { name: 'α«▓α»éα«░α»ìα«ñα»ü α«òα«╛α«░α»ìα«ƒα«⌐α»ì' })
+Expected: visible
+Error: strict mode violation: getByRole('heading', { name: 'α«▓α»éα«░α»ìα«ñα»ü α«òα«╛α«░α»ìα«ƒα«⌐α»ì' }) resolved to 2 elements:
+---
+TEST: TC-SITE-001: Navigation and Page Titles @high
+BROWSER: webkit
+ERROR:
+Error: expect(locator).toBeVisible() failed
+
+Locator: getByRole('heading', { name: /Our Story|α«Äα«Öα»ìα«òα«│α»ì α«òα«ñα»ê/, level: 2 })
+Expected: visible
+Timeout: 5000ms
+---
+TEST: TC-SITE-002: Language Switching @high
+BROWSER: webkit
+ERROR:
+Error: expect(locator).toBeVisible() failed
+
+Locator: getByRole('heading', { name: 'α«▓α»éα«░α»ìα«ñα»ü α«òα«╛α«░α»ìα«ƒα«⌐α»ì' })
+Expected: visible
+Error: strict mode violation: getByRole('heading', { name: 'α«▓α»éα«░α»ìα«ñα»ü α«òα«╛α«░α»ìα«ƒα«⌐α»ì' }) resolved to 2 elements:
+---
+TEST: TC-SITE-001: Navigation and Page Titles @high
+BROWSER: mobile-chrome
+ERROR:
+TimeoutError: locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('nav').getByRole('link', { name: 'Our Story' })
+
+
+---
+TEST: TC-SITE-002: Language Switching @high
+BROWSER: mobile-chrome
+ERROR:
+TimeoutError: locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('button:has-text("EN"), button:has-text("TA")')
+    - locator resolved to <button aria-label="Toggle language" class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-green-50 dark:hover:bg-green-900/30 text-gray-700 dark:text-gray-300 transition-all border border-transparent hover:border-green-200 dark:hover:border-green-800">ΓÇª</button>
+  - attempting click action
+---
+TEST: TC-SITE-004: Responsive Mobile Menu @high
+BROWSER: mobile-chrome
+ERROR:
+Error: expect(locator).toBeHidden() failed
+
+Locator:  locator('a:has-text("Products")').first()
+Expected: hidden
+Received: visible
+---
+TEST: TC-SITE-001: Navigation and Page Titles @high
+BROWSER: mobile-safari
+ERROR:
+TimeoutError: locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('nav').getByRole('link', { name: 'Our Story' })
+
+
+---
+TEST: TC-SITE-002: Language Switching @high
+BROWSER: mobile-safari
+ERROR:
+TimeoutError: locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('button:has-text("EN"), button:has-text("TA")')
+    - locator resolved to <button aria-label="Toggle language" class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-green-50 dark:hover:bg-green-900/30 text-gray-700 dark:text-gray-300 transition-all border border-transparent hover:border-green-200 dark:hover:border-green-800">ΓÇª</button>
+  - attempting click action
+---
+TEST: TC-SITE-004: Responsive Mobile Menu @high
+BROWSER: mobile-safari
+ERROR:
+Error: expect(locator).toBeHidden() failed
+
+Locator:  locator('a:has-text("Products")').first()
+Expected: hidden
+Received: visible
+---
+TEST: TC-SITE-001: Navigation and Page Titles @high
+BROWSER: tablet
+ERROR:
+Error: expect(locator).toBeVisible() failed
+
+Locator: getByRole('heading', { name: /Our Story|α«Äα«Öα»ìα«òα«│α»ì α«òα«ñα»ê/, level: 2 })
+Expected: visible
+Timeout: 5000ms
+---
+TEST: TC-SITE-002: Language Switching @high
+BROWSER: tablet
+ERROR:
+Error: expect(locator).toBeVisible() failed
+
+Locator: getByRole('heading', { name: 'α«▓α»éα«░α»ìα«ñα»ü α«òα«╛α«░α»ìα«ƒα«⌐α»ì' })
+Expected: visible
+Error: strict mode violation: getByRole('heading', { name: 'α«▓α»éα«░α»ìα«ñα»ü α«òα«╛α«░α»ìα«ƒα«⌐α»ì' }) resolved to 2 elements:

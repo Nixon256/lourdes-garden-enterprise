@@ -1,0 +1,1815 @@
+﻿{
+  "config": {
+    "configFile": "D:\\Others\\lourdes-garden-enterprise\\automation\\playwright.config.ts",
+    "rootDir": "D:/Others/lourdes-garden-enterprise/automation/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "D:/Others/lourdes-garden-enterprise/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/Others/lourdes-garden-enterprise/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/Others/lourdes-garden-enterprise/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "D:/Others/lourdes-garden-enterprise/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/Others/lourdes-garden-enterprise/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "D:/Others/lourdes-garden-enterprise/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/Others/lourdes-garden-enterprise/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "mobile-chrome",
+        "name": "mobile-chrome",
+        "testDir": "D:/Others/lourdes-garden-enterprise/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/Others/lourdes-garden-enterprise/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "mobile-safari",
+        "name": "mobile-safari",
+        "testDir": "D:/Others/lourdes-garden-enterprise/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/Others/lourdes-garden-enterprise/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "tablet",
+        "name": "tablet",
+        "testDir": "D:/Others/lourdes-garden-enterprise/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.57.0",
+    "workers": 2,
+    "webServer": {
+      "command": "cd .. && npm run dev",
+      "url": "http://localhost:3000",
+      "reuseExistingServer": true,
+      "timeout": 120000
+    }
+  },
+  "suites": [
+    {
+      "title": "ui\\contact.spec.ts",
+      "file": "ui/contact.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Contact Form Functionality",
+          "file": "ui/contact.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-CONTACT-001: Submit Contact Form Successfully @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 14645,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:38:39.455Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0f5f26e90458c7e4baec-2110f149136342a98dca",
+              "file": "ui/contact.spec.ts",
+              "line": 4,
+              "column": 9
+            },
+            {
+              "title": "TC-CONTACT-002: Form Validation @medium",
+              "ok": true,
+              "tags": [
+                "medium"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 10752,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:38:39.464Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0f5f26e90458c7e4baec-e9dd2c1fa16cd17adc50",
+              "file": "ui/contact.spec.ts",
+              "line": 40,
+              "column": 9
+            },
+            {
+              "title": "TC-CONTACT-001: Submit Contact Form Successfully @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 13188,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:39:09.348Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0f5f26e90458c7e4baec-3ab16daff73491d3f759",
+              "file": "ui/contact.spec.ts",
+              "line": 4,
+              "column": 9
+            },
+            {
+              "title": "TC-CONTACT-002: Form Validation @medium",
+              "ok": true,
+              "tags": [
+                "medium"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10391,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:39:09.725Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0f5f26e90458c7e4baec-d67d45bc87759250f1f3",
+              "file": "ui/contact.spec.ts",
+              "line": 40,
+              "column": 9
+            },
+            {
+              "title": "TC-CONTACT-001: Submit Contact Form Successfully @high",
+              "ok": false,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 24893,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h3').filter({ hasText: /Message Sent Successfully!|α«Üα»åα«»α»ìα«ñα«┐ α«╡α»åα«▒α»ìα«▒α«┐α«òα«░α««α«╛α«ò α«àα«⌐α»üα«¬α»ìα«¬α«¬α»ìα«¬α«ƒα»ìα«ƒα«ñα»ü!/ })\nExpected: visible\nTimeout: 20000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 20000ms\u001b[22m\n\u001b[2m  - waiting for locator('h3').filter({ hasText: /Message Sent Successfully!|α«Üα»åα«»α»ìα«ñα«┐ α«╡α»åα«▒α»ìα«▒α«┐α«òα«░α««α«╛α«ò α«àα«⌐α»üα«¬α»ìα«¬α«¬α»ìα«¬α«ƒα»ìα«ƒα«ñα»ü!/ })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h3').filter({ hasText: /Message Sent Successfully!|α«Üα»åα«»α»ìα«ñα«┐ α«╡α»åα«▒α»ìα«▒α«┐α«òα«░α««α«╛α«ò α«àα«⌐α»üα«¬α»ìα«¬α«¬α»ìα«¬α«ƒα»ìα«ƒα«ñα»ü!/ })\nExpected: visible\nTimeout: 20000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 20000ms\u001b[22m\n\u001b[2m  - waiting for locator('h3').filter({ hasText: /Message Sent Successfully!|α«Üα»åα«»α»ìα«ñα«┐ α«╡α»åα«▒α»ìα«▒α«┐α«òα«░α««α«╛α«ò α«àα«⌐α»üα«¬α»ìα«¬α«¬α»ìα«¬α«ƒα»ìα«ƒα«ñα»ü!/ })\u001b[22m\n\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts:26:38",
+                        "location": {
+                          "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts",
+                          "column": 38,
+                          "line": 26
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 24 |\u001b[39m         \u001b[90m// Use a very high timeout because the server response might be slow in this environment\u001b[39m\n \u001b[90m 25 |\u001b[39m         \u001b[36mconst\u001b[39m successHeading \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'h3'\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[35m/Message Sent Successfully!|α«Üα»åα«»α»ìα«ñα«┐ α«╡α»åα«▒α»ìα«▒α«┐α«òα«░α««α«╛α«ò α«àα«⌐α»üα«¬α»ìα«¬α«¬α»ìα«¬α«ƒα»ìα«ƒα«ñα»ü!/\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 26 |\u001b[39m         \u001b[36mawait\u001b[39m expect(successHeading)\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m20000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 27 |\u001b[39m\n \u001b[90m 28 |\u001b[39m         \u001b[36mconst\u001b[39m successSubtext \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'text=Thank you for contacting us'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n \u001b[90m 29 |\u001b[39m         \u001b[36mawait\u001b[39m expect(successSubtext)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts",
+                            "column": 38,
+                            "line": 26
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h3').filter({ hasText: /Message Sent Successfully!|α«Üα»åα«»α»ìα«ñα«┐ α«╡α»åα«▒α»ìα«▒α«┐α«òα«░α««α«╛α«ò α«àα«⌐α»üα«¬α»ìα«¬α«¬α»ìα«¬α«ƒα»ìα«ƒα«ñα»ü!/ })\nExpected: visible\nTimeout: 20000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 20000ms\u001b[22m\n\u001b[2m  - waiting for locator('h3').filter({ hasText: /Message Sent Successfully!|α«Üα»åα«»α»ìα«ñα«┐ α«╡α»åα«▒α»ìα«▒α«┐α«òα«░α««α«╛α«ò α«àα«⌐α»üα«¬α»ìα«¬α«¬α»ìα«¬α«ƒα»ìα«ƒα«ñα»ü!/ })\u001b[22m\n\n\n  24 |         // Use a very high timeout because the server response might be slow in this environment\n  25 |         const successHeading = page.locator('h3').filter({ hasText: /Message Sent Successfully!|α«Üα»åα«»α»ìα«ñα«┐ α«╡α»åα«▒α»ìα«▒α«┐α«òα«░α««α«╛α«ò α«àα«⌐α»üα«¬α»ìα«¬α«¬α»ìα«¬α«ƒα»ìα«ƒα«ñα»ü!/ });\n> 26 |         await expect(successHeading).toBeVisible({ timeout: 20000 });\n     |                                      ^\n  27 |\n  28 |         const successSubtext = page.locator('text=Thank you for contacting us').first();\n  29 |         await expect(successSubtext).toBeVisible();\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts:26:38"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:39:45.466Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-contact-Contact-Form-Fu-56083-tact-Form-Successfully-high-webkit\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-contact-Contact-Form-Fu-56083-tact-Form-Successfully-high-webkit\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-contact-Contact-Form-Fu-56083-tact-Form-Successfully-high-webkit\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts",
+                        "column": 38,
+                        "line": 26
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "0f5f26e90458c7e4baec-717f0dc6510a005baf31",
+              "file": "ui/contact.spec.ts",
+              "line": 4,
+              "column": 9
+            },
+            {
+              "title": "TC-CONTACT-002: Form Validation @medium",
+              "ok": true,
+              "tags": [
+                "medium"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4454,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:39:45.492Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0f5f26e90458c7e4baec-e19f93cac2eae97cc86c",
+              "file": "ui/contact.spec.ts",
+              "line": 40,
+              "column": 9
+            },
+            {
+              "title": "TC-CONTACT-001: Submit Contact Form Successfully @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4294,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:40:18.322Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0f5f26e90458c7e4baec-a2cef48bf4da37405ffa",
+              "file": "ui/contact.spec.ts",
+              "line": 4,
+              "column": 9
+            },
+            {
+              "title": "TC-CONTACT-002: Form Validation @medium",
+              "ok": true,
+              "tags": [
+                "medium"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 7140,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:40:24.979Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0f5f26e90458c7e4baec-25eaf4f22e0289aea769",
+              "file": "ui/contact.spec.ts",
+              "line": 40,
+              "column": 9
+            },
+            {
+              "title": "TC-CONTACT-001: Submit Contact Form Successfully @high",
+              "ok": false,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-safari",
+                  "projectName": "mobile-safari",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 23178,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h3').filter({ hasText: /Message Sent Successfully!|α«Üα»åα«»α»ìα«ñα«┐ α«╡α»åα«▒α»ìα«▒α«┐α«òα«░α««α«╛α«ò α«àα«⌐α»üα«¬α»ìα«¬α«¬α»ìα«¬α«ƒα»ìα«ƒα«ñα»ü!/ })\nExpected: visible\nTimeout: 20000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 20000ms\u001b[22m\n\u001b[2m  - waiting for locator('h3').filter({ hasText: /Message Sent Successfully!|α«Üα»åα«»α»ìα«ñα«┐ α«╡α»åα«▒α»ìα«▒α«┐α«òα«░α««α«╛α«ò α«àα«⌐α»üα«¬α»ìα«¬α«¬α»ìα«¬α«ƒα»ìα«ƒα«ñα»ü!/ })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h3').filter({ hasText: /Message Sent Successfully!|α«Üα»åα«»α»ìα«ñα«┐ α«╡α»åα«▒α»ìα«▒α«┐α«òα«░α««α«╛α«ò α«àα«⌐α»üα«¬α»ìα«¬α«¬α»ìα«¬α«ƒα»ìα«ƒα«ñα»ü!/ })\nExpected: visible\nTimeout: 20000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 20000ms\u001b[22m\n\u001b[2m  - waiting for locator('h3').filter({ hasText: /Message Sent Successfully!|α«Üα»åα«»α»ìα«ñα«┐ α«╡α»åα«▒α»ìα«▒α«┐α«òα«░α««α«╛α«ò α«àα«⌐α»üα«¬α»ìα«¬α«¬α»ìα«¬α«ƒα»ìα«ƒα«ñα»ü!/ })\u001b[22m\n\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts:26:38",
+                        "location": {
+                          "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts",
+                          "column": 38,
+                          "line": 26
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 24 |\u001b[39m         \u001b[90m// Use a very high timeout because the server response might be slow in this environment\u001b[39m\n \u001b[90m 25 |\u001b[39m         \u001b[36mconst\u001b[39m successHeading \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'h3'\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[35m/Message Sent Successfully!|α«Üα»åα«»α»ìα«ñα«┐ α«╡α»åα«▒α»ìα«▒α«┐α«òα«░α««α«╛α«ò α«àα«⌐α»üα«¬α»ìα«¬α«¬α»ìα«¬α«ƒα»ìα«ƒα«ñα»ü!/\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 26 |\u001b[39m         \u001b[36mawait\u001b[39m expect(successHeading)\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m20000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 27 |\u001b[39m\n \u001b[90m 28 |\u001b[39m         \u001b[36mconst\u001b[39m successSubtext \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'text=Thank you for contacting us'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n \u001b[90m 29 |\u001b[39m         \u001b[36mawait\u001b[39m expect(successSubtext)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts",
+                            "column": 38,
+                            "line": 26
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h3').filter({ hasText: /Message Sent Successfully!|α«Üα»åα«»α»ìα«ñα«┐ α«╡α»åα«▒α»ìα«▒α«┐α«òα«░α««α«╛α«ò α«àα«⌐α»üα«¬α»ìα«¬α«¬α»ìα«¬α«ƒα»ìα«ƒα«ñα»ü!/ })\nExpected: visible\nTimeout: 20000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 20000ms\u001b[22m\n\u001b[2m  - waiting for locator('h3').filter({ hasText: /Message Sent Successfully!|α«Üα»åα«»α»ìα«ñα«┐ α«╡α»åα«▒α»ìα«▒α«┐α«òα«░α««α«╛α«ò α«àα«⌐α»üα«¬α»ìα«¬α«¬α»ìα«¬α«ƒα»ìα«ƒα«ñα»ü!/ })\u001b[22m\n\n\n  24 |         // Use a very high timeout because the server response might be slow in this environment\n  25 |         const successHeading = page.locator('h3').filter({ hasText: /Message Sent Successfully!|α«Üα»åα«»α»ìα«ñα«┐ α«╡α»åα«▒α»ìα«▒α«┐α«òα«░α««α«╛α«ò α«àα«⌐α»üα«¬α»ìα«¬α«¬α»ìα«¬α«ƒα»ìα«ƒα«ñα»ü!/ });\n> 26 |         await expect(successHeading).toBeVisible({ timeout: 20000 });\n     |                                      ^\n  27 |\n  28 |         const successSubtext = page.locator('text=Thank you for contacting us').first();\n  29 |         await expect(successSubtext).toBeVisible();\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts:26:38"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:40:40.831Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-contact-Contact-Form-Fu-56083-tact-Form-Successfully-high-mobile-safari\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-contact-Contact-Form-Fu-56083-tact-Form-Successfully-high-mobile-safari\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-contact-Contact-Form-Fu-56083-tact-Form-Successfully-high-mobile-safari\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\contact.spec.ts",
+                        "column": 38,
+                        "line": 26
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "0f5f26e90458c7e4baec-d2af1df907ef9240654b",
+              "file": "ui/contact.spec.ts",
+              "line": 4,
+              "column": 9
+            },
+            {
+              "title": "TC-CONTACT-002: Form Validation @medium",
+              "ok": true,
+              "tags": [
+                "medium"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-safari",
+                  "projectName": "mobile-safari",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3184,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:40:42.185Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0f5f26e90458c7e4baec-312a1f1fc22af25ace68",
+              "file": "ui/contact.spec.ts",
+              "line": 40,
+              "column": 9
+            },
+            {
+              "title": "TC-CONTACT-001: Submit Contact Form Successfully @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet",
+                  "projectName": "tablet",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 7681,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:41:07.624Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0f5f26e90458c7e4baec-cec94dd5732f762fa5bd",
+              "file": "ui/contact.spec.ts",
+              "line": 4,
+              "column": 9
+            },
+            {
+              "title": "TC-CONTACT-002: Form Validation @medium",
+              "ok": true,
+              "tags": [
+                "medium"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet",
+                  "projectName": "tablet",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12020,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:41:15.898Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0f5f26e90458c7e4baec-f0a0faf990c09b205929",
+              "file": "ui/contact.spec.ts",
+              "line": 40,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ui\\site.spec.ts",
+      "file": "ui/site.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Full Site Verification",
+          "file": "ui/site.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-SITE-001: Navigation and Page Titles @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 9226,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:38:50.439Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-0cb61755b9f50a7de653",
+              "file": "ui/site.spec.ts",
+              "line": 5,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-002: Language Switching @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7611,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:38:54.324Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-c74eeff8d6e4b1b1bcad",
+              "file": "ui/site.spec.ts",
+              "line": 48,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-003: Home Page Narrative Integrity (No Prices/Cart) @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 7794,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:38:59.800Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-0aa6d7f5080abbc911fb",
+              "file": "ui/site.spec.ts",
+              "line": 75,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-004: Responsive Mobile Menu @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3167,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:39:02.004Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-97f70acd6c33c3bb7553",
+              "file": "ui/site.spec.ts",
+              "line": 88,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-005: Custom Botanical Cursor @medium",
+              "ok": true,
+              "tags": [
+                "medium"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3006,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:39:05.190Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-e8eefd294142c76e989f",
+              "file": "ui/site.spec.ts",
+              "line": 114,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-001: Navigation and Page Titles @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 15732,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:39:21.745Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-17e4e5381a5875b1a2b4",
+              "file": "ui/site.spec.ts",
+              "line": 5,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-002: Language Switching @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 6654,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:39:23.554Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-f172f3192aca12bdbeab",
+              "file": "ui/site.spec.ts",
+              "line": 48,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-003: Home Page Narrative Integrity (No Prices/Cart) @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 8695,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:39:30.231Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-c2989a5b05918b3ed46a",
+              "file": "ui/site.spec.ts",
+              "line": 75,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-004: Responsive Mobile Menu @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5194,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:39:37.512Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-6cfbd535884a303276b7",
+              "file": "ui/site.spec.ts",
+              "line": 88,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-005: Custom Botanical Cursor @medium",
+              "ok": true,
+              "tags": [
+                "medium"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3026,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:39:38.958Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-1e38528202064ac23714",
+              "file": "ui/site.spec.ts",
+              "line": 114,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-001: Navigation and Page Titles @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13647,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:39:50.107Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-4be9a2a8d77da89c9a28",
+              "file": "ui/site.spec.ts",
+              "line": 5,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-002: Language Switching @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5437,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:40:03.776Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-9d154d35cbb582a1449f",
+              "file": "ui/site.spec.ts",
+              "line": 48,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-003: Home Page Narrative Integrity (No Prices/Cart) @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7251,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:40:09.236Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-86566a6ec018d85d64bf",
+              "file": "ui/site.spec.ts",
+              "line": 75,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-004: Responsive Mobile Menu @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3538,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:40:12.571Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-541eb2ca08139e8e6b25",
+              "file": "ui/site.spec.ts",
+              "line": 88,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-005: Custom Botanical Cursor @medium",
+              "ok": true,
+              "tags": [
+                "medium"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 5324,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:40:16.208Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-480ee81a039da7012ee6",
+              "file": "ui/site.spec.ts",
+              "line": 114,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-001: Navigation and Page Titles @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10803,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:40:22.810Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-e9e6778e38d2fb82ed35",
+              "file": "ui/site.spec.ts",
+              "line": 5,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-002: Language Switching @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3538,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:40:32.828Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-51c47ce6f38a9e056151",
+              "file": "ui/site.spec.ts",
+              "line": 48,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-003: Home Page Narrative Integrity (No Prices/Cart) @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4864,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:40:33.659Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-1935ceac4dddd92f7058",
+              "file": "ui/site.spec.ts",
+              "line": 75,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-004: Responsive Mobile Menu @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3593,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:40:36.393Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-914d21bd10a7d541d23f",
+              "file": "ui/site.spec.ts",
+              "line": 88,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-005: Custom Botanical Cursor @medium",
+              "ok": true,
+              "tags": [
+                "medium"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-chrome",
+                  "projectName": "mobile-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 512,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:40:38.544Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-d0742e398008e0a2052b",
+              "file": "ui/site.spec.ts",
+              "line": 114,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-001: Navigation and Page Titles @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-safari",
+                  "projectName": "mobile-safari",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 11191,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:40:45.537Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-0cb27fbcb0b6ab5217f7",
+              "file": "ui/site.spec.ts",
+              "line": 5,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-002: Language Switching @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-safari",
+                  "projectName": "mobile-safari",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 4203,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:40:56.754Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-eebf3b81c6ba3a49b984",
+              "file": "ui/site.spec.ts",
+              "line": 48,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-003: Home Page Narrative Integrity (No Prices/Cart) @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-safari",
+                  "projectName": "mobile-safari",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 4239,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:41:00.978Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-61b3bc5bfc71b9831f2c",
+              "file": "ui/site.spec.ts",
+              "line": 75,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-004: Responsive Mobile Menu @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-safari",
+                  "projectName": "mobile-safari",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6952,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:41:06.392Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-8ffe7b3011b7421cfec0",
+              "file": "ui/site.spec.ts",
+              "line": 88,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-005: Custom Botanical Cursor @medium",
+              "ok": true,
+              "tags": [
+                "medium"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile-safari",
+                  "projectName": "mobile-safari",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 392,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:41:05.243Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-fce72d350eeafc4691b9",
+              "file": "ui/site.spec.ts",
+              "line": 114,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-001: Navigation and Page Titles @high",
+              "ok": false,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet",
+                  "projectName": "tablet",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 13050,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/\\/about/\u001b[39m\nReceived string:  \u001b[31m\"http://localhost:3000/\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    8 ├ù unexpected value \"http://localhost:3000/\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/\\/about/\u001b[39m\nReceived string:  \u001b[31m\"http://localhost:3000/\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    8 ├ù unexpected value \"http://localhost:3000/\"\u001b[22m\n\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts:28:28",
+                        "location": {
+                          "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts",
+                          "column": 28,
+                          "line": 28
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 26 |\u001b[39m         \u001b[90m// About\u001b[39m\n \u001b[90m 27 |\u001b[39m         \u001b[36mawait\u001b[39m navigateTo(\u001b[35m/Our Story|α«Äα«Öα»ìα«òα«│α»ì α«òα«ñα»ê/\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 28 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/\\/about/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 29 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'heading'\u001b[39m\u001b[33m,\u001b[39m { level\u001b[33m:\u001b[39m \u001b[35m1\u001b[39m\u001b[33m,\u001b[39m name\u001b[33m:\u001b[39m \u001b[35m/Our Story|α«Äα«Öα»ìα«òα«│α»ì α«òα«ñα»ê/\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m\n \u001b[90m 31 |\u001b[39m         \u001b[90m// Products\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts",
+                            "column": 28,
+                            "line": 28
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/\\/about/\u001b[39m\nReceived string:  \u001b[31m\"http://localhost:3000/\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    8 ├ù unexpected value \"http://localhost:3000/\"\u001b[22m\n\n\n  26 |         // About\n  27 |         await navigateTo(/Our Story|α«Äα«Öα»ìα«òα«│α»ì α«òα«ñα»ê/);\n> 28 |         await expect(page).toHaveURL(/\\/about/);\n     |                            ^\n  29 |         await expect(page.getByRole('heading', { level: 1, name: /Our Story|α«Äα«Öα»ìα«òα«│α»ì α«òα«ñα»ê/ })).toBeVisible();\n  30 |\n  31 |         // Products\n    at D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts:28:28"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:41:15.521Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-06c77-gation-and-Page-Titles-high-tablet\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-06c77-gation-and-Page-Titles-high-tablet\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Others\\lourdes-garden-enterprise\\automation\\test-results\\ui-site-Full-Site-Verifica-06c77-gation-and-Page-Titles-high-tablet\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Others\\lourdes-garden-enterprise\\automation\\tests\\ui\\site.spec.ts",
+                        "column": 28,
+                        "line": 28
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-a4b8216cc16b869e1296",
+              "file": "ui/site.spec.ts",
+              "line": 5,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-002: Language Switching @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet",
+                  "projectName": "tablet",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3277,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:41:28.489Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-11870713924ba1b92705",
+              "file": "ui/site.spec.ts",
+              "line": 48,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-003: Home Page Narrative Integrity (No Prices/Cart) @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet",
+                  "projectName": "tablet",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 4996,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:41:32.378Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-1675f901b79aec9a0f57",
+              "file": "ui/site.spec.ts",
+              "line": 75,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-004: Responsive Mobile Menu @high",
+              "ok": true,
+              "tags": [
+                "high"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet",
+                  "projectName": "tablet",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3356,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:41:31.795Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-a26eb9eca1327e59a0bd",
+              "file": "ui/site.spec.ts",
+              "line": 88,
+              "column": 9
+            },
+            {
+              "title": "TC-SITE-005: Custom Botanical Cursor @medium",
+              "ok": true,
+              "tags": [
+                "medium"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet",
+                  "projectName": "tablet",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3907,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-18T08:41:35.176Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "829a817f49845bbdbe44-54bb6dec6161da55c221",
+              "file": "ui/site.spec.ts",
+              "line": 114,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-02-18T08:38:37.643Z",
+    "duration": 181666.457,
+    "expected": 39,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  }
+}
