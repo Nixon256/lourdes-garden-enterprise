@@ -31,7 +31,7 @@ function applySecurityHeaders(response: NextResponse): NextResponse {
         'Content-Security-Policy',
         [
             "default-src 'self'",
-            "script-src 'self' 'unsafe-inline' 'strict-dynamic' https://www.googletagmanager.com https://www.clarity.ms https://checkout.razorpay.com https://js.stripe.com",
+            "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.clarity.ms https://checkout.razorpay.com https://js.stripe.com",
             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
             "font-src 'self' https://fonts.gstatic.com",
             "img-src 'self' data: blob: https://res.cloudinary.com https://lh3.googleusercontent.com https://www.googletagmanager.com https://*.gstatic.com https://*.googleapis.com",
