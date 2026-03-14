@@ -72,13 +72,9 @@ export default async function proxy(req: NextRequest): Promise<NextResponse> {
         return applySecurityHeaders(NextResponse.redirect(new URL('/admin/dashboard', req.url)))
     }
 
-    // 2. Admin routes — no cookie → send to login
+    // 2. Admin routes — disabled for live (v2 feature)
     if (ADMIN_ROUTES.some((r) => pathname.startsWith(r))) {
-        if (!hasSession) {
-            const loginUrl = new URL('/login', req.url)
-            loginUrl.searchParams.set('callbackUrl', req.url)
-            return applySecurityHeaders(NextResponse.redirect(loginUrl))
-        }
+        return applySecurityHeaders(NextResponse.redirect(new URL('/', req.url)))
     }
 
     // 3. Customer routes — no cookie → send to login
